@@ -2178,8 +2178,11 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 40px;
   }
 }
+.slider-wrapper {
+  position: relative;
+}
 .search-bar-container {
-  position: fixed; /* Fija la barra en la pantalla */
+  position: absolute; /* Fija la barra en la pantalla */
   top: 350px; /* Ajusta la distancia desde la parte superior */
   left: 50%; /* Centra horizontalmente */
   transform: translateX(-50%); /* Ajusta el centrado */
