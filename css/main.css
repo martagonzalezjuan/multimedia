@@ -2178,22 +2178,60 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 40px;
   }
 }
+.search-bar-container {
+  position: fixed; /* Fija la barra en la pantalla */
+  top: 350px; /* Ajusta la distancia desde la parte superior */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajusta el centrado */
+  z-index: 1000; /* Asegúrate de que esté por encima de los sliders */
+}
 
-.header-btn {
+.search-bar {
   background-color: #fff;
-  padding: 8px 40px;
-  font-weight: 600;
+  padding: 0px 20px;
+  font-weight: 400;
   color: #222;
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
   border: 1px solid transparent;
-  border-radius: 20px;
+  border-radius: 30px;
   margin-top: 30px;
-  display: inline-block;
+  display: flex;
 }
 
-.header-btn:hover {
+.search-bar:hover {
   border: 1px solid #fff;
   background: transparent;
+  color: #fff;
+}
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1; /* Ocupa todo el espacio disponible */
+  font-size: 16px;
+  background: transparent; /* Fondo transparente para que coincida con la barra */
+  color: #222; /* Color del texto */
+  padding: 8px 10px;
+}
+.search-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #222;
+  font-size: 18px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.search-button i {
+  font-size: 20px; /* Tamaño del ícono */
+}
+.search-bar:hover .search-input {
+  color: #fff;
+}
+
+.search-bar:hover .search-button {
   color: #fff;
 }
 
