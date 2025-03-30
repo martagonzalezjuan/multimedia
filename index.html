@@ -16,6 +16,10 @@
   <meta charset="UTF-8" />
   <!-- Site Title -->
   <title>7 Maravillas de Mallorca</title>
+  <!-- CSS Propio -->
+  <link rel="stylesheet" href="/public/css/searchbar.css" />
+  <!-- JS Propios -->
+  <script src="/public/libs/maravillas_api.js"/>
   <!-- JS files -->
   <script>function initializeOwlCarousel() {
     // Destruir cualquier instancia anterior de Owl Carousel en el contenedor
@@ -86,15 +90,33 @@
     <!-- End Header Area -->
   </section>
   <section class="slider-wrapper">
-    <!-- Search bar -->
+    <!-- Search bar with autocomplete -->
     <div class="search-bar-container">
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." class="search-input" />
+      <div class="dropdown-container">
+        <input type="text" id="maravillas-input" class="search-input" list="maravillas-list" placeholder="Selecciona una maravilla" />
         <button class="search-button">
           <i class="fa fa-search"></i>
         </button>
+        <datalist id="maravillas-list"></datalist>
       </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', async function() {
+        try {
+          const datalist = document.getElementById('maravillas-list');
+          const maravillas = await getMaravillas(); // Usando la librería maravillas_api.js
+          maravillas.forEach(maravilla => {
+            const option = document.createElement('option');
+            option.value = maravilla.name;
+            datalist.appendChild(option);
+          });
+        } catch (error) {
+          console.error("Error cargando las maravillas:", error);
+        }
+      });
+    </script>
+
     <section class="default-banner active-blog-slider">
       <div class="item-slider relative" style="background: url(img/slider1.jpg); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
@@ -106,7 +128,7 @@
                   Descubre las maravillas de Mallorca
                 </h4>
                 <h1 class="text-uppercase text-white">Castillo de Bellver</h1>
-                <p class="text-white">texto opcional</p>
+                <!-- <p class="text-white">texto opcional</p> -->
               </div>
             </div>
           </div>
@@ -122,7 +144,7 @@
                   Descubre las maravillas de Mallorca
                 </h4>
                 <h1 class="text-uppercase text-white">Sa Calobra</h1>
-                <p class="text-white">texto opcional</p>
+                <!-- <p class="text-white">texto opcional</p> -->
               </div>
             </div>
           </div>
@@ -138,7 +160,7 @@
                   Descubre las maravillas de Mallorca
                 </h4>
                 <h1 class="text-uppercase text-white">Sa Foradada</h1>
-                <p class="text-white">texto opcional</p>
+                <!-- <p class="text-white">texto opcional</p> -->
               </div>
             </div>
           </div>

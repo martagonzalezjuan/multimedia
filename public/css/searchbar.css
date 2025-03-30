@@ -1,0 +1,60 @@
+/* filepath: c:\Users\andre\Desktop\multimedia\public\css\searchbar.css */
+
+/* Contenedor principal de la search bar */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  background-color: #fff; /* Fondo blanco */
+  color: #000; /* Texto negro */
+  border-radius: 30px; /* Redondeado */
+  padding: 10px;
+  z-index: 2 !important;
+}
+
+/* Contenedor del dropdown y el input */
+.dropdown-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Estilos para el input de búsqueda */
+.search-input {
+  width: 100%;
+  padding: 12px 50px 12px 20px;
+  border: 2px solid #ddd;
+  border-radius: 30px; /* Redondeado */
+  font-size: 16px;
+  background-color: #fff; /* Fondo blanco */
+  color: #000; /* Texto negro */
+  transition: border-color 0.3s ease;
+}
+
+/* Efecto al enfocar el input */
+.search-input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Estilos para el botón de búsqueda */
+.search-button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff; /* Fondo blanco */
+  border: 2px solid #ddd;
+  border-radius: 50%; /* Redondeado */
+  padding: 10px;
+  cursor: pointer;
+  color: #000; /* Texto negro */
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover en el botón */
+.search-button:hover {
+  background: #f1f1f1;
+}
