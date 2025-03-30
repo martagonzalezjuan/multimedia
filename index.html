@@ -99,30 +99,63 @@
   <section class="slider-wrapper">
     <!-- Search bar with autocomplete -->
     <div class="search-bar-container">
-      <div class="dropdown-container">
-        <input type="text" id="maravillas-input" class="search-input" list="maravillas-list" placeholder="Selecciona una maravilla" />
+      <div class="search-bar">
+        <input type="text" id="maravillas-input" class="search-input" list="maravillas-list" placeholder="Search..." />
         <button class="search-button">
           <i class="fa fa-search"></i>
         </button>
-        <datalist id="maravillas-list"></datalist>
-      </div>
+        
+        
     </div>
-
+    <div id="suggestions" class="suggestions-container"></div>
+    </div>
     <script>
-      document.addEventListener('DOMContentLoaded', async function() {
-        try {
-          const datalist = document.getElementById('maravillas-list');
-          const maravillas = await getMaravillas(); // Usando la librería maravillas_api.js
-          maravillas.forEach(maravilla => {
-            const option = document.createElement('option');
-            option.value = maravilla.name;
-            datalist.appendChild(option);
+document.addEventListener('DOMContentLoaded', async function() {
+  const searchInput = document.getElementById('maravillas-input');
+  const suggestionsContainer = document.getElementById('suggestions');
+
+  try {
+    const maravillas = await getMaravillas(); // usando maravillas_api.js
+
+    searchInput.addEventListener('input', function(e) {
+      const value = e.target.value.toLowerCase();
+      suggestionsContainer.innerHTML = '';
+
+      if (value.length > 0) {
+        const filteredMaravillas = maravillas.filter(maravilla => 
+          maravilla.name.toLowerCase().includes(value)
+        );
+
+        if (filteredMaravillas.length > 0) {
+          suggestionsContainer.style.display = 'block';
+          filteredMaravillas.forEach(maravilla => {
+            const div = document.createElement('div');
+            div.className = 'suggestion-item';
+            div.textContent = maravilla.name;
+            div.addEventListener('click', () => {
+              searchInput.value = maravilla.name;
+              suggestionsContainer.style.display = 'none';
+            });
+            suggestionsContainer.appendChild(div);
           });
-        } catch (error) {
-          console.error("Error cargando las maravillas:", error);
+        } else {
+          suggestionsContainer.style.display = 'none';
         }
-      });
-    </script>
+      } else {
+        suggestionsContainer.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!searchInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+        suggestionsContainer.style.display = 'none';
+      }
+    });
+  } catch (error) {
+    console.error("Error cargando las maravillas:", error);
+  }
+});
+</script>
 
     <section class="default-banner active-blog-slider">
       <div class="item-slider relative" style="background: url(img/slider1.jpg); background-size: cover">
