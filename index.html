@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   <!-- Start project Area -->
 
   </div>
-  <section class="project-area section-gap" id= "seccion-maravilla"> </section>
+  <section class="project-area section-gap" id= "seccion-maravilla" style="visibility: hidden; display: none;"> </section>
 
   <script>
 
@@ -230,7 +230,7 @@ searchButton.addEventListener('click', async () => {
   try {
     const maravilla = await getMaravillasByName(searchText);
     
-
+    seccionMaravilla.style.visibility = 'visible';
     seccionMaravilla.style.display = 'block';
 
     const template = `
