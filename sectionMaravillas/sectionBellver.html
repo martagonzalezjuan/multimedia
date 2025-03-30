@@ -1,8 +1,11 @@
+
+  </script>
+   
    <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="menu-content pb-30 col-lg-8">
           <div class="title text-center">
-            <h1 class="mb-10">Castillo de Bellver</h1>
+            <h1 class="mb-10" id="nombreMaravilla">Castillo de Bellver</h1>
             <p id="descripcion">
               El castillo de Bellver es una fortificación de estilo gótico situada a unos tres kilómetros de la ciudad española de Palma de Mallorca, en Baleares. Fue construido a principios del siglo XIV por orden del rey Jaime II de Mallorca. Se encuentra en una colina de 112 metros de altura sobre el nivel del mar, en una zona boscosa conocida como la sierra de Na Burguesa, lo que le permite dominar la bahía de Palma y el llano de la ciudad. Es uno de los pocos castillos de planta circular de Europa y fue usado como residencia real, prisión y fortaleza defensiva.
             </p>
@@ -12,7 +15,7 @@
       <div class="row justify-content-center d-flex">
         <div class="active-works-carousel mt-40 col-lg-8">
           <div class="item">
-            <img class="img-fluid" src="public/castilloBellver/bellver1.webp" alt="" />
+            <img class="img-fluid" src="https://www.7maravillasmallorca.com/castilloBellver/bellver1.webp" alt="" />
             <div class="caption text-center mt-20">
               <h6 class="text-uppercase">Foto1</h6>
               <p>
@@ -105,4 +108,12 @@
         </div>
       </div>
     </div>
-   
+    <script>
+      fetch("https://www.7maravillasmallorca.com/JSONs/maravillas.json")
+        .then(response => response.json())
+        .then(maravillas => {
+          document.getElementById("nombreMaravilla").innerHTML = maravillas[0].name;
+          console.log(maravillas[0].name);
+        })
+        .catch(error => console.error("Error cargando el JSON:", error));
+    </script>

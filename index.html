@@ -163,84 +163,9 @@
   </section>
 
   <!-- Start project Area -->
-   <div> <button id="btn-bellver"> bellver </button> <button id="btn-calobra"> calobra </button> 
-          <button id="btn-catedral"> catedral </button> <button id="btn-coves"> coves </button> 
-          <button id="btn-cura"> cura </button> <button id="btn-uib"> UIB </button> 
-          <button id="btn-foradada"> foradada </button> 
 
   </div>
   <section class="project-area section-gap" id= "seccion-maravilla"> </section>
-
-  <script>
-    document.getElementById('btn-bellver').addEventListener('click', function () {
-      fetch('sectionMaravillas/sectionBellver.html'
-      ).then(response => response.text()
-      ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-      initializeOwlCarousel(); 
-      }
-      ).catch(error => console.error("Error cargando el contenido:", error));
-    }); 
-  </script>
-  
-  <script>
-    document.getElementById('btn-calobra').addEventListener('click', function () {
-      fetch('sectionMaravillas/sectionCalobra.html'
-      ).then(response => response.text()
-      ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-      initializeOwlCarousel(); 
-      }
-      ).catch(error => console.error("Error cargando el contenido:", error));
-    }); 
-  </script>
-   <script>
-    document.getElementById('btn-catedral').addEventListener('click', function () {
-      fetch('sectionMaravillas/sectionCatedral.html'
-      ).then(response => response.text()
-      ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-      initializeOwlCarousel(); 
-      }
-      ).catch(error => console.error("Error cargando el contenido:", error));
-    }); 
-  </script>
-  <script> document.getElementById('btn-coves').addEventListener('click', function () {
-      fetch('sectionMaravillas/sectionCoves.html'
-      ).then(response => response.text()
-      ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-      initializeOwlCarousel(); 
-      }
-      ).catch(error => console.error("Error cargando el contenido:", error));
-    }); 
-  </script>
-  <script>
-    document.getElementById('btn-cura').addEventListener('click', function () {
-      fetch('sectionMaravillas/sectionCura.html'
-      ).then(response => response.text()
-      ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-      initializeOwlCarousel(); 
-      }
-      ).catch(error => console.error("Error cargando el contenido:", error));
-    }); 
-  </script>
-  <script>
-    document.getElementById('btn-uib').addEventListener('click', function () {
-      fetch('sectionMaravillas/sectionUIB.html'
-      ).then(response => response.text()
-      ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-      initializeOwlCarousel(); 
-      }
-      ).catch(error => console.error("Error cargando el contenido:", error));
-    }); 
-  </script>
-  <script>
-    document.getElementById('btn-foradada').addEventListener('click', function () {
-      fetch('sectionMaravillas/sectionForadada.html'
-      ).then(response => response.text()
-      ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-      initializeOwlCarousel(); 
-      }
-      ).catch(error => console.error("Error cargando el contenido:", error));
-    }); 
-  </script>
   <script>
   // Selecciona el campo de entrada y el botón de búsqueda
   const searchInput = document.querySelector('.search-input');
@@ -308,18 +233,6 @@
       break;
       default:
         console.log('No se encontró la maravilla con ese nombre.');
-    }
-    if (searchText) {
-      if(searchText.toLowerCase() == "bellver"){
-      fetch('sectionMaravillas/sectionBellver.html'
-      ).then(response => response.text()
-      ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-      initializeOwlCarousel(); 
-      }
-      ).catch(error => console.error("Error cargando el contenido:", error));
-    } 
-    } else {
-      console.log('Por favor, ingresa un término de búsqueda.');
     }
   });
 </script>
