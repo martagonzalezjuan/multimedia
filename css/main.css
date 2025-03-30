@@ -2266,6 +2266,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
+
 @media (max-width: 800px) {
   .info-area .info-content {
     text-align: center;
@@ -2346,6 +2347,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-area {
   background-color: #f9f9ff;
+}
+.info-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.info-box p {
+  margin-bottom: 10px;
+}
+
+.horarios h4 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.horarios p {
+  color: #666;
+  margin-bottom: 5px;
 }
 
 .active-works-carousel .item .thumb {
