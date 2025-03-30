@@ -57,7 +57,6 @@ function crearMapa(container, latitud, longitud) {
     if (!container) {
         throw new Error("El contenedor del mapa no está definido.");
     }
-    
     const map = L.map(container).setView([latitud, longitud], 13);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
