@@ -180,6 +180,12 @@
         ).then(response => response.text()
         ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
         initializeOwlCarousel(); 
+      fetch("https://www.7maravillasmallorca.com/JSONs/maravillas.json")
+        .then(response => response.json())
+        .then(maravillas => {
+          document.getElementById("nombreMaravilla").innerHTML = maravillas.itemListElement[0].name;
+        })
+        .catch(error => console.error("Error cargando el JSON:", error));
         }
         ).catch(error => console.error("Error cargando el contenido:", error));
       break;
