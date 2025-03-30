@@ -22,7 +22,11 @@
   <script src="/public/libs/maravillas_api.js"></script>
   <script src="/public/libs/lector_api.js"></script>
   <script src="/public/libs/geo_api.js"></script>
-
+  <script src="/public/libs/forecast_api.js"></script>
+  <!-- Librerias externas -->
+   <!-- Leaflet -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <!-- JS files -->
   <script>function initializeOwlCarousel() {
     // Destruir cualquier instancia anterior de Owl Carousel en el contenedor
@@ -191,6 +195,10 @@
 
   </div>
   <section class="project-area section-gap" id= "seccion-maravilla"> </section>
+  <script>
+    // Creamos el mapa usando la libreria geo_api.js
+    crearMapa(document.getElementById('seccion-maravilla'),39.5696, 2.6502); // Coordenadas de Mallorca
+  </script>
   <script>
   // Selecciona el campo de entrada y el botón de búsqueda
   const searchInput = document.querySelector('.search-input');
