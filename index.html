@@ -181,16 +181,7 @@
       ).catch(error => console.error("Error cargando el contenido:", error));
     }); 
   </script>
-   <script>
-    fetch('./JSONs/maravillas.JSON')
-.then(response => response.json())  // Convierte el archivo JSON a objeto JavaScript
-.then(data => {
-const description = data.itemListElement[0].description;  // Extrae la descripción del primer elemento
-document.getElementById('descripcion').textContent = description;  // Inserta la descripción en el <p>
-})
-.catch(error => console.error('Error al cargar el archivo JSON:', error));
-
-  </script>
+  
   <script>
     document.getElementById('btn-calobra').addEventListener('click', function () {
       fetch('sectionMaravillas/sectionCalobra.html'
@@ -250,6 +241,88 @@ document.getElementById('descripcion').textContent = description;  // Inserta la
       ).catch(error => console.error("Error cargando el contenido:", error));
     }); 
   </script>
+  <script>
+  // Selecciona el campo de entrada y el botón de búsqueda
+  const searchInput = document.querySelector('.search-input');
+  const searchButton = document.querySelector('.search-button');
+
+  // Agrega un evento al botón de búsqueda
+  searchButton.addEventListener('click', () => {
+    const searchText = searchInput.value.trim(); // Obtiene el texto ingresado y elimina espacios en blanco
+    switch(searchText.toLowerCase()){
+      case "bellver":
+        fetch('sectionMaravillas/sectionBellver.html'
+        ).then(response => response.text()
+        ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
+        initializeOwlCarousel(); 
+        }
+        ).catch(error => console.error("Error cargando el contenido:", error));
+      break;
+      case "calobra":
+        fetch('sectionMaravillas/sectionCalobra.html'
+        ).then(response => response.text()
+        ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
+        initializeOwlCarousel(); 
+        }
+        ).catch(error => console.error("Error cargando el contenido:", error));
+      break;
+      case "catedral":
+        fetch('sectionMaravillas/sectionCatedral.html'
+        ).then(response => response.text()
+        ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
+        initializeOwlCarousel(); 
+        }
+        ).catch(error => console.error("Error cargando el contenido:", error));
+      break;
+      case "coves":
+        fetch('sectionMaravillas/sectionCoves.html'
+        ).then(response => response.text()
+        ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
+        initializeOwlCarousel(); 
+        }
+        ).catch(error => console.error("Error cargando el contenido:", error));
+      break;
+      case "cura":
+        fetch('sectionMaravillas/sectionCura.html'
+        ).then(response => response.text()
+        ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
+        initializeOwlCarousel(); 
+        }
+        ).catch(error => console.error("Error cargando el contenido:", error));
+      break;
+      case "uib":
+          fetch('sectionMaravillas/sectionUIB.html'
+          ).then(response => response.text()
+          ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
+          initializeOwlCarousel(); 
+          }
+          ).catch(error => console.error("Error cargando el contenido:", error));
+      break;
+      case "foradada":
+          fetch('sectionMaravillas/sectionForadada.html'
+          ).then(response => response.text()
+         ).then (data => { document.getElementById('seccion-maravilla').innerHTML = data;
+          initializeOwlCarousel(); 
+          }
+          ).catch(error => console.error("Error cargando el contenido:", error));
+      break;
+      default:
+        console.log('No se encontró la maravilla con ese nombre.');
+    }
+    if (searchText) {
+      if(searchText.toLowerCase() == "bellver"){
+      fetch('sectionMaravillas/sectionBellver.html'
+      ).then(response => response.text()
+      ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
+      initializeOwlCarousel(); 
+      }
+      ).catch(error => console.error("Error cargando el contenido:", error));
+    } 
+    } else {
+      console.log('Por favor, ingresa un término de búsqueda.');
+    }
+  });
+</script>
   <!-- End project Area -->
 
   <!-- Start gallery Area -->
