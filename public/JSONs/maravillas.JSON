@@ -391,7 +391,16 @@
                 "bestRating": 5,
                 "worstRating": 1
             },
-            "image": "https://www.descubriendomallorca.com/clientes/qwmkxx07z2/fotos/g_mfk340o437.jpg",
+            "image": 
+            ["https://www.7maravillasmallorca.com/saForadada/foradada1.webp",
+            "https://www.7maravillasmallorca.com/saForadada/foradada2.webp",
+            "https://www.7maravillasmallorca.com/saForadada/foradada3.webp",
+            "https://www.7maravillasmallorca.com/saForadada/foradada4.webp",
+            "https://www.7maravillasmallorca.com/saForadada/foradada5.webp",
+            "https://www.7maravillasmallorca.com/saForadada/foradada6.webp",
+            "https://www.7maravillasmallorca.com/saForadada/foradada7.webp",
+            "https://www.7maravillasmallorca.com/saForadada/foradada8.webp"
+            ],
             "description": "Sa Foradada es una península de la Sierra de Tramontana de Mallorca (Islas Baleares, España), que está situada en el término municipal de Deyá. Se caracteriza porque tiene un agujero visible desde varios puntos de la Sierra, cosa que le da nombre, y por su acantilado de 90 metros de altura.",
             "telephone": "None",
             "url": "https://elturismofacil.com/sa-foradada/",
