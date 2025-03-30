@@ -218,85 +218,75 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   </div>
   <section class="project-area section-gap" id= "seccion-maravilla"> </section>
+
   <script>
-    // Creamos el mapa usando la libreria geo_api.js
-    crearMapa(document.getElementById('seccion-maravilla'),39.5696, 2.6502); // Coordenadas de Mallorca
-  </script>
-  <script>
-  // Selecciona el campo de entrada y el botón de búsqueda
+
   const searchInput = document.querySelector('.search-input');
   const searchButton = document.querySelector('.search-button');
 
-  // Agrega un evento al botón de búsqueda
-  searchButton.addEventListener('click', () => {
-    const searchText = searchInput.value.trim(); // Obtiene el texto ingresado y elimina espacios en blanco
-    switch(searchText){
-      case "Castillo de Bellver":
-        fetch('sectionMaravillas/sectionBellver.html'
-        ).then(response => response.text()
-        ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-        initializeOwlCarousel(); 
-      fetch("https://www.7maravillasmallorca.com/JSONs/maravillas.json")
-        .then(response => response.json())
-        .then(maravillas => {
-          document.getElementById("nombreMaravilla").innerHTML = maravillas.itemListElement[0].name;
-        })
-        .catch(error => console.error("Error cargando el JSON:", error));
-        }
-        ).catch(error => console.error("Error cargando el contenido:", error));
-      break;
-      case "Sa Calobra":
-        fetch('sectionMaravillas/sectionCalobra.html'
-        ).then(response => response.text()
-        ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-        initializeOwlCarousel(); 
-        }
-        ).catch(error => console.error("Error cargando el contenido:", error));
-      break;
-      case "Catedral-Basílica de Santa María de Mallorca":
-        fetch('sectionMaravillas/sectionCatedral.html'
-        ).then(response => response.text()
-        ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-        initializeOwlCarousel(); 
-        }
-        ).catch(error => console.error("Error cargando el contenido:", error));
-      break;
-      case "Coves del Drach":
-        fetch('sectionMaravillas/sectionCoves.html'
-        ).then(response => response.text()
-        ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-        initializeOwlCarousel(); 
-        }
-        ).catch(error => console.error("Error cargando el contenido:", error));
-      break;
-      case "Santuari de Cura":
-        fetch('sectionMaravillas/sectionCura.html'
-        ).then(response => response.text()
-        ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-        initializeOwlCarousel(); 
-        }
-        ).catch(error => console.error("Error cargando el contenido:", error));
-      break;
-      case "Universitat de les Illes Balears":
-          fetch('sectionMaravillas/sectionUIB.html'
-          ).then(response => response.text()
-          ).then(data => { document.getElementById('seccion-maravilla').innerHTML = data; 
-          initializeOwlCarousel(); 
-          }
-          ).catch(error => console.error("Error cargando el contenido:", error));
-      break;
-      case "Sa Foradada":
-          fetch('sectionMaravillas/sectionForadada.html'
-          ).then(response => response.text()
-         ).then (data => { document.getElementById('seccion-maravilla').innerHTML = data;
-          initializeOwlCarousel(); 
-          }
-          ).catch(error => console.error("Error cargando el contenido:", error));
-      break;
-      default:
-        console.log('No se encontró la maravilla con ese nombre.');
-    }
-  });
+searchButton.addEventListener('click', async () => {
+  const searchText = searchInput.value.trim();
+  const seccionMaravilla = document.getElementById('seccion-maravilla');
+  
+  try {
+    const maravilla = await getMaravillasByName(searchText);
+    
+
+    seccionMaravilla.style.display = 'block';
+
+    const template = `
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="menu-content pb-30 col-lg-8">
+            <div class="title text-center">
+              <h1 class="mb-10" id="nombreMaravilla">${maravilla.name}</h1>
+              <p id="descripcion">${maravilla.description}</p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center d-flex">
+          <div class="active-works-carousel mt-40 col-lg-8">
+            ${maravilla.image.map((img, index) => `
+              <div class="item">
+                <img class="img-fluid" src="${img}" alt="${maravilla.name} - Imagen ${index + 1}" />
+                <div class="caption text-center mt-20">
+                  <h6 class="text-uppercase">Foto ${index + 1}</h6>
+                  <p>Imagen ${index + 1} de ${maravilla.name}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+
+      <div id="seccion-mapa" style="display: flex; justify-content: center; align-items: center; margin-top: 2vh; margin-bottom: 2vh;">
+        <div id="map" style="width: 75%; height: min(50vh, 400px);"></div>
+      </div>
+    `;
+    
+    seccionMaravilla.innerHTML = template;
+    
+
+    setTimeout(() => {
+      initializeOwlCarousel();
+    }, 100);
+
+    crearMapa(
+      document.getElementById('map'),
+      maravilla.geo.latitude,
+      maravilla.geo.longitude,
+      maravilla.name
+    );
+    
+    seccionMaravilla.scrollIntoView({ behavior: 'smooth' });
+
+  } catch (error) {
+    console.error("Error:", error);
+    seccionMaravilla.innerHTML = '<div class="container"><div class="row"><div class="col text-center"><h2>Maravilla no encontrada</h2></div></div></div>';
+  }
+});
+
+  
 </script>
   <!-- End project Area -->
 

@@ -1881,7 +1881,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9;
+  z-index: 9999;
 }
 
 .menu-bar {
@@ -2187,7 +2187,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom:35%;
   left: 50%; 
   transform: translateX(-50%);
-  z-index: 1000; 
+  z-index: 999; 
   width: 50%;
   max-width: 500px;
 }
