@@ -233,35 +233,74 @@ searchButton.addEventListener('click', async () => {
     seccionMaravilla.style.visibility = 'visible';
     seccionMaravilla.style.display = 'block';
 
-    const template = `
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="menu-content pb-30 col-lg-8">
-            <div class="title text-center">
-              <h1 class="mb-10" id="nombreMaravilla">${maravilla.name}</h1>
-              <p id="descripcion">${maravilla.description}</p>
+// Modifica la sección de información adicional y mapa en el template
+const template = `
+  <div class="container">
+    <!-- Título y descripción -->
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-30 col-lg-12">
+        <div class="title text-center">
+          <h1 class="mb-10" id="nombreMaravilla">${maravilla.name}</h1>
+          <p id="descripcion">${maravilla.description}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrusel de imágenes -->
+    <div class="row justify-content-center d-flex mb-5">
+      <div class="active-works-carousel col-lg-8">
+        ${maravilla.image.map((img, index) => `
+          <div class="item">
+            <img class="img-fluid" src="${img}" alt="${maravilla.name} - Imagen ${index + 1}" />
+            <div class="caption text-center mt-20">
+              <h6 class="text-uppercase">Foto ${index + 1}</h6>
+              <p>Imagen ${index + 1} de ${maravilla.name}</p>
             </div>
           </div>
-        </div>
-        <div class="row justify-content-center d-flex">
-          <div class="active-works-carousel mt-40 col-lg-8">
-            ${maravilla.image.map((img, index) => `
-              <div class="item">
-                <img class="img-fluid" src="${img}" alt="${maravilla.name} - Imagen ${index + 1}" />
-                <div class="caption text-center mt-20">
-                  <h6 class="text-uppercase">Foto ${index + 1}</h6>
-                  <p>Imagen ${index + 1} de ${maravilla.name}</p>
-                </div>
-              </div>
-            `).join('')}
-          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Info y Mapa -->
+    <div class="row justify-content-center">
+      <!-- Información adicional -->
+      <div class="col-lg-6">
+        <div class="info-box p-4 mb-4 bg-white rounded shadow-sm">
+          ${maravilla.telephone !== "None" ? `
+            <p><strong>Teléfono:</strong> ${maravilla.telephone}</p>
+          ` : ''}
+          <p><strong>Dirección:</strong> ${maravilla.address.streetAddress}, ${maravilla.address.postalCode} ${maravilla.address.addressLocality}</p>
+          <p><strong>Acceso público:</strong> ${maravilla.publicAccess ? 'Sí' : 'No'}</p>
+          <p><strong>Entrada gratuita:</strong> ${maravilla.isAccessibleForFree ? 'Sí' : 'No'}</p>
+          ${maravilla.url ? `
+            <p><strong>Sitio web:</strong> <a href="${maravilla.url}" target="_blank">${maravilla.url}</a></p>
+          ` : ''}
+          
+          <!-- Horarios -->
+          ${Array.isArray(maravilla.openingHoursSpecification) ? `
+            <div class="horarios mt-3">
+              <h4>Horarios:</h4>
+              ${maravilla.openingHoursSpecification.map(horario => `
+                <p>
+                  ${Array.isArray(horario.dayOfWeek) ? horario.dayOfWeek.join(', ') : horario.dayOfWeek}: 
+                  ${horario.opens} - ${horario.closes}
+                  ${horario.validFrom ? `(Válido desde ${horario.validFrom} hasta ${horario.validThrough})` : ''}
+                </p>
+              `).join('')}
+            </div>
+          ` : `
+            <p><strong>Horario:</strong> ${maravilla.openingHoursSpecification.opens} - ${maravilla.openingHoursSpecification.closes}</p>
+          `}
         </div>
       </div>
 
-      <div id="seccion-mapa" style="display: flex; justify-content: center; align-items: center; margin-top: 2vh; margin-bottom: 2vh;">
-        <div id="map" style="width: 75%; height: min(50vh, 400px);"></div>
+      <!-- Mapa -->
+      <div class="col-lg-6">
+        <div id="map" style="width: 100%; height: 400px;" class="rounded shadow-sm"></div>
       </div>
-    `;
+    </div>
+  </div>
+`;
     
     seccionMaravilla.innerHTML = template;
     
