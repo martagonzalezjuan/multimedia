@@ -53,7 +53,7 @@ async function obtenerDireccion(latitud, longitud) {
  * @param {number} longitud - Longitud del usuario
  * @throws {Error} Si no se puede crear el mapa
  */
-function crearMapa(container, latitud, longitud) {
+function crearMapa(container, latitud, longitud, nombre) {
     if (!container) {
         throw new Error("El contenedor del mapa no está definido.");
     }
@@ -65,6 +65,11 @@ function crearMapa(container, latitud, longitud) {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
     
-    L.marker([latitud, longitud]).addTo(map).bindPopup("Ubicación actual").openPopup();
+    L.marker([latitud, longitud]).addTo(map).bindPopup(nombre);
+
+    // Refresh del mapa para evitar problemas de visualización
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 1000);
     
 }

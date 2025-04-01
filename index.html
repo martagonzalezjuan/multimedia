@@ -23,7 +23,10 @@
   <script src="/public/libs/lector_api.js"></script>
   <script src="/public/libs/geo_api.js"></script>
   <script src="/public/libs/forecast_api.js"></script>
+  <script src="/public/components/maravilla_component.js"></script>
   <!-- Librerias externas -->
+   <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
    <!-- Leaflet -->
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -93,9 +96,16 @@
         <button class="search-button">
           <i class="fa fa-search"></i>
         </button>
-        
-        
+        <script>
+          document.getElementById('maravillas-input').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              document.querySelector('.search-button').click();
+            }
+          });
+        </script>
     </div>
+
     <div id="suggestions" class="suggestions-container"></div>
     </div>
     <script>
@@ -222,110 +232,28 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   const searchInput = document.querySelector('.search-input');
   const searchButton = document.querySelector('.search-button');
-
-searchButton.addEventListener('click', async () => {
-  const searchText = searchInput.value.trim();
-  const seccionMaravilla = document.getElementById('seccion-maravilla');
-  
-  try {
-    const maravilla = await getMaravillasByName(searchText);
+  searchButton.addEventListener('click', async () => {
+    const searchText = searchInput.value.trim();
+    const seccionMaravilla = document.getElementById('seccion-maravilla');
     
-    seccionMaravilla.style.visibility = 'visible';
-    seccionMaravilla.style.display = 'block';
-
-// Modifica la sección de información adicional y mapa en el template
-const template = `
-  <div class="container">
-    <!-- Título y descripción -->
-    <div class="row d-flex justify-content-center">
-      <div class="menu-content pb-30 col-lg-12">
-        <div class="title text-center">
-          <h1 class="mb-10" id="nombreMaravilla">${maravilla.name}</h1>
-          <p id="descripcion">${maravilla.description}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Carrusel de imágenes -->
-    <div class="row justify-content-center d-flex mb-5">
-      <div class="active-works-carousel col-lg-8">
-        ${maravilla.image.map((img, index) => `
-          <div class="item">
-            <img class="img-fluid" src="${img}" alt="${maravilla.name} - Imagen ${index + 1}" />
-            <div class="caption text-center mt-20">
-              <h6 class="text-uppercase">Foto ${index + 1}</h6>
-              <p>Imagen ${index + 1} de ${maravilla.name}</p>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    </div>
-
-    <!-- Info y Mapa -->
-    <div class="row justify-content-center">
-      <!-- Información adicional -->
-      <div class="col-lg-6">
-        <div class="info-box p-4 mb-4 bg-white rounded shadow-sm">
-          ${maravilla.telephone !== "None" ? `
-            <p><strong>Teléfono:</strong> ${maravilla.telephone}</p>
-          ` : ''}
-          <p><strong>Dirección:</strong> ${maravilla.address.streetAddress}, ${maravilla.address.postalCode} ${maravilla.address.addressLocality}</p>
-          <p><strong>Acceso público:</strong> ${maravilla.publicAccess ? 'Sí' : 'No'}</p>
-          <p><strong>Entrada gratuita:</strong> ${maravilla.isAccessibleForFree ? 'Sí' : 'No'}</p>
-          ${maravilla.url ? `
-            <p><strong>Sitio web:</strong> <a href="${maravilla.url}" target="_blank">${maravilla.url}</a></p>
-          ` : ''}
-          
-          <!-- Horarios -->
-          ${Array.isArray(maravilla.openingHoursSpecification) ? `
-            <div class="horarios mt-3">
-              <h4>Horarios:</h4>
-              ${maravilla.openingHoursSpecification.map(horario => `
-                <p>
-                  ${Array.isArray(horario.dayOfWeek) ? horario.dayOfWeek.join(', ') : horario.dayOfWeek}: 
-                  ${horario.opens} - ${horario.closes}
-                  ${horario.validFrom ? `(Válido desde ${horario.validFrom} hasta ${horario.validThrough})` : ''}
-                </p>
-              `).join('')}
-            </div>
-          ` : `
-            <p><strong>Horario:</strong> ${maravilla.openingHoursSpecification.opens} - ${maravilla.openingHoursSpecification.closes}</p>
-          `}
-        </div>
-      </div>
-
-      <!-- Mapa -->
-      <div class="col-lg-6">
-        <div id="map" style="width: 100%; height: 400px;" class="rounded shadow-sm"></div>
-      </div>
-    </div>
-  </div>
-`;
-    
-    seccionMaravilla.innerHTML = template;
-    
-
-    setTimeout(() => {
-      initializeOwlCarousel();
-    }, 100);
-
-    crearMapa(
-      document.getElementById('map'),
-      maravilla.geo.latitude,
-      maravilla.geo.longitude,
-      maravilla.name
-    );
-    
-    seccionMaravilla.scrollIntoView({ behavior: 'smooth' });
-
-  } catch (error) {
-    console.error("Error:", error);
-    seccionMaravilla.innerHTML = '<div class="container"><div class="row"><div class="col text-center"><h2>Maravilla no encontrada</h2></div></div></div>';
-  }
-});
-
-  
-</script>
+    try {
+      const maravilla = await getMaravillasByName(searchText);
+      
+      seccionMaravilla.style.visibility = 'visible';
+      seccionMaravilla.style.display = 'block';
+      seccionMaravilla.innerHTML = '';
+      
+      // Usamos la función reutilizable createMaravillaContainer
+      const container = await createMaravillaContainer(maravilla);
+      seccionMaravilla.appendChild(container);
+      
+      seccionMaravilla.scrollIntoView({ behavior: 'smooth' });
+    } catch (error) {
+      console.error("Error:", error);
+      seccionMaravilla.innerHTML = '<div class="container"><div class="row"><div class="col text-center"><h2>Maravilla no encontrada</h2></div></div></div>';
+    }
+  });
+  </script>
   <!-- End project Area -->
 
   <!-- Start gallery Area -->

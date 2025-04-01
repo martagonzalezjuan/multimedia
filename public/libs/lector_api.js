@@ -33,7 +33,20 @@ function leerEnVozAlta(texto, idioma) {
   // Verifica si hay voces disponibles
   const voces = window.speechSynthesis.getVoices();
   if (voces.length === 0) {
-    console.error("No se han cargado voces disponibles.");
+    console.warn("Voces no cargadas, esperando...");
+    window.speechSynthesis.onvoiceschanged = function() {
+      const vocesActualizadas = window.speechSynthesis.getVoices();
+      if (vocesActualizadas.length > 0) {
+        console.log("Voces cargadas, reintentando la lectura.");
+        const utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = idioma || "es-ES"; // Idioma por defecto español de España
+        speechSynthesis.speak(utterance);
+        utterance.onend = function () {
+          console.log("Lectura completada.");
+        };
+        window.speechSynthesis.onvoiceschanged = null;
+      }
+    };
     return;
   }
 

@@ -58,7 +58,8 @@ body {
   position: relative;
 }
 
-ol, ul {
+ol,
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -83,7 +84,9 @@ iframe {
   border: 0;
 }
 
-a, a:focus, a:hover {
+a,
+a:focus,
+a:hover {
   text-decoration: none;
   outline: 0;
 }
@@ -107,7 +110,11 @@ a, a:focus, a:hover {
  *  Typography
  *
  **/
-.btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i {
+.btn i,
+.btn-large i,
+.btn-floating i,
+.btn-large i,
+.btn-flat i {
   font-size: 1em;
   line-height: inherit;
 }
@@ -116,8 +123,12 @@ a, a:focus, a:hover {
   background: #f9f9ff;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Poppins", sans-serif;
   color: #222222;
   line-height: 1.2em !important;
@@ -126,8 +137,12 @@ h4, h5, h6 {
   font-weight: 600;
 }
 
-.h1, .h2, .h3,
-.h4, .h5, .h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   margin-bottom: 0;
   margin-top: 0;
   font-family: "Poppins", sans-serif;
@@ -135,32 +150,39 @@ h4, h5, h6 {
   color: #222222;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 36px;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 30px;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 24px;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 18px;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 16px;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: 14px;
   color: #222222;
 }
 
-td, th {
+td,
+th {
   border-radius: 0px;
 }
 
@@ -173,7 +195,8 @@ td, th {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clear::before, .clear::after {
+.clear::before,
+.clear::after {
   content: " ";
   display: table;
 }
@@ -805,11 +828,21 @@ h6 {
   font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.5em;
 }
 
-.typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 {
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4,
+.typography h5,
+.typography h6 {
   color: #777777;
 }
 
@@ -836,7 +869,7 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   line-height: 40px;
   padding: 0 30px;
-  font-size: .8em;
+  font-size: 0.8em;
   text-align: center;
   text-decoration: none;
   font-weight: 500;
@@ -1102,7 +1135,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 
-.progress-table .table-head .serial, .progress-table .table-head .country, .progress-table .table-head .visit, .progress-table .table-head .percentage {
+.progress-table .table-head .serial,
+.progress-table .table-head .country,
+.progress-table .table-head .visit,
+.progress-table .table-head .percentage {
   color: #222222;
   line-height: 40px;
   text-transform: uppercase;
@@ -1115,7 +1151,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 
-.progress-table .table-row .serial, .progress-table .table-row .country, .progress-table .table-row .visit, .progress-table .table-row .percentage {
+.progress-table .table-row .serial,
+.progress-table .table-row .country,
+.progress-table .table-row .visit,
+.progress-table .table-row .percentage {
   display: flex;
   align-items: center;
 }
@@ -1556,7 +1595,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-checkbox input:checked + label {
-  background: url(../img/elements/primary-check.png) no-repeat center center/cover;
+  background: url(../img/elements/primary-check.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -1594,7 +1634,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .confirm-checkbox input:checked + label {
-  background: url(../img/elements/success-check.png) no-repeat center center/cover;
+  background: url(../img/elements/success-check.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -1637,7 +1678,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .disabled-checkbox input:checked + label {
-  background: url(../img/elements/disabled-check.png) no-repeat center center/cover;
+  background: url(../img/elements/disabled-check.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -1675,7 +1717,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-radio input:checked + label {
-  background: url(../img/elements/primary-radio.png) no-repeat center center/cover;
+  background: url(../img/elements/primary-radio.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -1713,7 +1756,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .confirm-radio input:checked + label {
-  background: url(../img/elements/success-radio.png) no-repeat center center/cover;
+  background: url(../img/elements/success-radio.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -1756,7 +1800,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .disabled-radio input:checked + label {
-  background: url(../img/elements/disabled-radio.png) no-repeat center center/cover;
+  background: url(../img/elements/disabled-radio.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -1950,13 +1995,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.p1-gradient-bg, .primary-btn, .primary-btn2:hover, .single-feature:hover, .video-area .overlay-bg, .single-footer-widget .click-btn, .generic-banner {
+.p1-gradient-bg,
+.primary-btn,
+.primary-btn2:hover,
+.single-feature:hover,
+.video-area .overlay-bg,
+.single-footer-widget .click-btn,
+.generic-banner {
   background-image: -moz-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
   background-image: -webkit-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
   background-image: -ms-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
 }
 
-.p1-gradient-color, .counter-left h2, .footer-social a:hover i, .single-footer-widget .bb-btn {
+.p1-gradient-color,
+.counter-left h2,
+.footer-social a:hover i,
+.single-footer-widget .bb-btn {
   background: -moz-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
   background: -webkit-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
   background: -ms-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
@@ -2120,7 +2174,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
+.dropdown-item:focus,
+.dropdown-item:hover {
   color: #fff;
   text-decoration: none;
   background-color: transparent;
@@ -2182,12 +2237,12 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 .search-bar-container {
-  position: absolute; 
-  top: auto; 
-  bottom:35%;
-  left: 50%; 
+  position: absolute;
+  top: auto;
+  bottom: 35%;
+  left: 50%;
   transform: translateX(-50%);
-  z-index: 999; 
+  z-index: 999;
   width: 50%;
   max-width: 500px;
 }
@@ -2204,7 +2259,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 
-
 .search-bar:hover {
   border: 1px solid #fff;
   background: transparent;
@@ -2216,6 +2270,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0 0 20px 20px;
   margin-top: 5px;
   max-height: 200px;
+  overflow-y: auto;
   display: none;
 }
 
@@ -2227,7 +2282,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .suggestion-item:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 .search-input {
   border: none;
@@ -2265,7 +2320,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   display: inline-block;
 }
-
 
 @media (max-width: 800px) {
   .info-area .info-content {
@@ -2457,7 +2511,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-.single-feature:hover a, .single-feature:hover .title .lnr {
+.single-feature:hover a,
+.single-feature:hover .title .lnr {
   color: #fff;
 }
 
@@ -2481,12 +2536,14 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     top: 20px;
   }
-  .gallery-area .owl-controls .owl-prev, .gallery-area .owl-controls .owl-next {
+  .gallery-area .owl-controls .owl-prev,
+  .gallery-area .owl-controls .owl-next {
     display: inline-block;
   }
 }
 
-.gallery-area .lnr-arrow-up, .gallery-area .lnr-arrow-down {
+.gallery-area .lnr-arrow-up,
+.gallery-area .lnr-arrow-down {
   background-color: white;
   box-shadow: -14.142px 14.142px 20px 0px rgba(157, 157, 157, 0.2);
   padding: 14px;
@@ -2568,7 +2625,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .video-area .overlay-bg {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .video-area .video-content {
@@ -2618,7 +2675,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 15px;
 }
 
-.form-area input, .form-area textarea {
+.form-area input,
+.form-area textarea {
   border-radius: 0;
   font-size: 12px;
 }
@@ -2640,7 +2698,8 @@ h6 {
   font-weight: 600;
 }
 
-.copy-right-text i, .copy-right-text a {
+.copy-right-text i,
+.copy-right-text a {
   color: #b01afe;
 }
 
@@ -2772,7 +2831,8 @@ h6 {
   padding-top: 20px;
 }
 
-.footer-text a, .footer-text i {
+.footer-text a,
+.footer-text i {
   color: #b01afe;
 }
 
