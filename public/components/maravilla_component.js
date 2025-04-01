@@ -132,11 +132,12 @@ const template = `
     initializeOwlCarousel();
   }, 100);
 
-  crearMapa(
+  await crearMapa(
     container.querySelector("#map"),
     maravilla.geo.latitude,
     maravilla.geo.longitude,
-    maravilla.name
+    maravilla.name,
+    false
   );
 
   return container;

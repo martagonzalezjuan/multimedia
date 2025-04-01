@@ -11,14 +11,14 @@
 async function obtenerUbicacion() {
   if (!navigator.geolocation) {
     throw new Error(
-      "La API de geolocalización no está soportada en este navegador."
+      "La API de geolocalizacion no esta soportada en este navegador."
     );
   }
 
   const position = await new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, (error) => {
-      console.error("Error al obtener la ubicación:", error);
-      reject(new Error("Error al obtener la ubicación: " + error.message));
+      console.error("Error al obtener la ubicacion:", error);
+      reject(new Error("Error al obtener la ubicacion: " + error.message));
     });
   });
 
@@ -51,9 +51,11 @@ async function obtenerDireccion(latitud, longitud) {
  * @param {string} container - Contenedor donde se mostrará el mapa
  * @param {number} latitud - Latitud del usuario
  * @param {number} longitud - Longitud del usuario
+ * @param {string} nombre - Nombre de la maravilla
+ * @param {boolean} comoLlegar - Si se marca como true, se mostrará la dirección de la maravilla
  * @throws {Error} Si no se puede crear el mapa
  */
-function crearMapa(container, latitud, longitud, nombre) {
+async function crearMapa(container, latitud, longitud, nombre, comoLlegar) {
     if (!container) {
         throw new Error("El contenedor del mapa no está definido.");
     }
@@ -64,8 +66,26 @@ function crearMapa(container, latitud, longitud, nombre) {
         attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
+
+    if (!comoLlegar) {
+      L.marker([latitud, longitud]).addTo(map).bindPopup(nombre);
+    } else {
+
+      const posicionUsuario = await obtenerUbicacion();
+
+      L.Routing.control({
+        waypoints: [
+          L.latLng(latitud, longitud),
+          L.latLng(posicionUsuario.latitud, posicionUsuario.longitud)
+        ]
+      }).addTo(map);
+
+    }
     
-    L.marker([latitud, longitud]).addTo(map).bindPopup(nombre);
+
+
+
+    
 
     // Refresh del mapa para evitar problemas de visualización
     setTimeout(() => {
