@@ -2001,11 +2001,12 @@ h6 {
 .single-feature:hover,
 .video-area .overlay-bg,
 .single-footer-widget .click-btn,
-.generic-banner {
-  background-image: -moz-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
-  background-image: -webkit-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
-  background-image: -ms-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
-}
+/* DESCOMENTAR PARA FILTRO VIDEO*/
+/* .generic-banner {
+  background-image: -moz-linear-gradient(0deg, #ffc21a 0%, #beb125 0%);
+  background-image: -webkit-linear-gradient(0deg, #ffc21a 0%, #beb125 0%);
+  background-image: -ms-linear-gradient(0deg, #ffc21a 0%, #beb125 0%);
+} */
 
 .p1-gradient-color,
 .counter-left h2,
@@ -2621,7 +2622,7 @@ h6 {
 .video-area {
   padding: 200px 0 60px 0;
   position: relative;
-  background: url(../img/video-bg.jpg) no-repeat center center/cover;
+  background: url(/public/saForadada/foradada1.webp) no-repeat center center/cover;
 }
 
 .video-area .overlay-bg {
