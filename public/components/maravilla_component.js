@@ -127,17 +127,19 @@ const template = `
 
   container.innerHTML = template;
 
-  setTimeout(() => {
-    initializeOwlCarousel();
-  }, 100);
+  
 
   await crearMapa(
     container.querySelector("#map"),
     maravilla.geo.latitude,
     maravilla.geo.longitude,
     maravilla.name,
-    false
+    true
   );
+
+  setTimeout(() => {
+        initializeOwlCarousel();
+      }, 100);
 
   return container;
 }

@@ -77,8 +77,12 @@ async function crearMapa(container, latitud, longitud, nombre, comoLlegar) {
         waypoints: [
           L.latLng(latitud, longitud),
           L.latLng(posicionUsuario.latitud, posicionUsuario.longitud)
-        ]
+        ],
+        fitSelectedRoutes: false  // Impide que el mapa ajuste la vista automáticamente
       }).addTo(map);
+
+      // Asegurarse de que el mapa se centre sobre el destino inicialmente
+      map.setView([latitud, longitud], 13);
 
     }
     
