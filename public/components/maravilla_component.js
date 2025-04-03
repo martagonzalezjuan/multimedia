@@ -1,12 +1,12 @@
 async function createMaravillaContainer(maravilla) {
-  const container = document.createElement("div");
+        const container = document.createElement("div");
 
-  const prevision = await obtenerPronosticoActual(
-    maravilla.geo.latitude,
-    maravilla.geo.longitude
-  );
+        const prevision = await obtenerPronosticoActual(
+                maravilla.geo.latitude,
+                maravilla.geo.longitude,
+        );
 
-const template = `
+        const template = `
         <div class="container my-5">
                         <!-- Título y descripción -->
                         <div class="row justify-content-center">
@@ -30,19 +30,29 @@ const template = `
                         <div class="row justify-content-center my-5">
                                         <div class="col-lg-8">
                                                         <div class="active-works-carousel">
-                                                                        ${Array.isArray(maravilla.image) ? maravilla.image.map(
-                                                                                        (img, index) => `
+                                                                        ${
+                Array.isArray(maravilla.image)
+                        ? maravilla.image.map(
+                                (img, index) => `
                                                                                                                         <div class="item">
-                                                                                                                                        <img class="img-fluid rounded shadow-sm" src="${img}" alt="${maravilla.name} - Imagen ${index + 1}" />
+                                                                                                                                        <img class="img-fluid rounded shadow-sm" src="${img}" alt="${maravilla.name} - Imagen ${
+                                        index + 1
+                                }" />
                                                                                                                                         <div class="caption text-center mt-3">
                                                                                                                                                         <h6 class="text-uppercase">
-                                                                                                                                                                        <i class="fas fa-image me-1"></i>Foto ${index + 1}
+                                                                                                                                                                        <i class="fas fa-image me-1"></i>Foto ${
+                                        index + 1
+                                }
                                                                                                                                                         </h6>
-                                                                                                                                                        <p class="small">Imagen ${index + 1} de ${maravilla.name}</p>
+                                                                                                                                                        <p class="small">Imagen ${
+                                        index + 1
+                                } de ${maravilla.name}</p>
                                                                                                                                         </div>
                                                                                                                         </div>
-                                                                                                        `
-                                                                                ).join("") : ""}
+                                                                                                        `,
+                        ).join("")
+                        : ""
+        }
                                                         </div>
                                         </div>
                         </div>
@@ -67,50 +77,66 @@ const template = `
                                         <div class="col-lg-8">
                                                         <div class="card border-0 shadow-sm mb-4">
                                                                         <div class="card-body">
-                                                                                        ${maravilla.telephone !== "None"
-                                                                                                ? `<p><i class="fas fa-phone me-2"></i><strong>Teléfono:</strong> <a href="tel:${maravilla.telephone}">${maravilla.telephone}</a></p>`
-                                                                                                : ""
-                                                                                        }
+                                                                                        ${
+                maravilla.telephone !== "None"
+                        ? `<p><i class="fas fa-phone me-2"></i><strong>Teléfono:</strong> <a href="tel:${maravilla.telephone}">${maravilla.telephone}</a></p>`
+                        : ""
+        }
                                                                                         <p><i class="fas fa-map-marker-alt me-2"></i><strong>Dirección:</strong> ${maravilla.address.streetAddress}, ${maravilla.address.postalCode} ${maravilla.address.addressLocality}</p>
-                                                                                        <p><i class="fas fa-universal-access me-2"></i><strong>Acceso público:</strong> ${maravilla.publicAccess ? "Sí" : "No"}</p>
-                                                                                        <p><i class="fas fa-ticket-alt me-2"></i><strong>Entrada gratuita:</strong> ${maravilla.isAccessibleForFree ? "Sí" : "No"}</p>
-                                                                                        ${maravilla.url
-                                                                                                ? `<p><i class="fas fa-globe me-2"></i><strong>Sitio web:</strong> <a href="${maravilla.url}" target="_blank">${maravilla.url}</a></p>`
-                                                                                                : ""
-                                                                                        }
+                                                                                        <p><i class="fas fa-universal-access me-2"></i><strong>Acceso público:</strong> ${
+                maravilla.publicAccess ? "Sí" : "No"
+        }</p>
+                                                                                        <p><i class="fas fa-ticket-alt me-2"></i><strong>Entrada gratuita:</strong> ${
+                maravilla.isAccessibleForFree ? "Sí" : "No"
+        }</p>
+                                                                                        ${
+                maravilla.url
+                        ? `<p><i class="fas fa-globe me-2"></i><strong>Sitio web:</strong> <a href="${maravilla.url}" target="_blank">${maravilla.url}</a></p>`
+                        : ""
+        }
                                                                                         
                                                                                         <!-- Horarios -->
-                                                                                        ${Array.isArray(maravilla.openingHoursSpecification)
-                                                                                                ? `
+                                                                                        ${
+                Array.isArray(maravilla.openingHoursSpecification)
+                        ? `
                                                                                                                                         <div class="horarios mt-4">
                                                                                                                                                         <h4 class="mb-3">
                                                                                                                                                                         <i class="fas fa-clock me-2"></i>Horarios
                                                                                                                                                         </h4>
-                                                                                                                                                        ${maravilla.openingHoursSpecification
-                                                                                                                                                                .map(
-                                                                                                                                                                        (horario) => `
+                                                                                                                                                        ${
+                                maravilla.openingHoursSpecification
+                                        .map(
+                                                (horario) => `
                                                                                                                                                                                                         <p>
                                                                                                                                                                                                                         <i class="far fa-calendar-alt me-1"></i>
-                                                                                                                                                                                                                        ${Array.isArray(horario.dayOfWeek)
-                                                                                                                                                                                                                                ? horario.dayOfWeek.join(", ")
-                                                                                                                                                                                                                                : horario.dayOfWeek
-                                                                                                                                                                                                                        }: ${horario.opens} - ${horario.closes}
-                                                                                                                                                                                                                        ${horario.validFrom
-                                                                                                                                                                                                                                ? `(Válido desde ${horario.validFrom} hasta ${horario.validThrough})`
-                                                                                                                                                                                                                                : ""
-                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        ${
+                                                        Array.isArray(
+                                                                        horario.dayOfWeek,
+                                                                )
+                                                                ? horario
+                                                                        .dayOfWeek
+                                                                        .join(", ")
+                                                                : horario
+                                                                        .dayOfWeek
+                                                }: ${horario.opens} - ${horario.closes}
+                                                                                                                                                                                                                        ${
+                                                        horario.validFrom
+                                                                ? `(Válido desde ${horario.validFrom} hasta ${horario.validThrough})`
+                                                                : ""
+                                                }
                                                                                                                                                                                                         </p>
-                                                                                                                                                                                        `
-                                                                                                                                                                )
-                                                                                                                                                                .join("")}
+                                                                                                                                                                                        `,
+                                        )
+                                        .join("")
+                        }
                                                                                                                                         </div>
                                                                                                                         `
-                                                                                                : `
+                        : `
                                                                                                                                         <p class="mt-4">
                                                                                                                                                         <i class="fas fa-clock me-2"></i><strong>Horario:</strong> ${maravilla.openingHoursSpecification.opens} - ${maravilla.openingHoursSpecification.closes}
                                                                                                                                         </p>
                                                                                                                         `
-                                                                                        }
+        }
                                                                         </div>
                                                         </div>
                                                         
@@ -125,21 +151,20 @@ const template = `
         </div>
 `;
 
-  container.innerHTML = template;
+        container.innerHTML = template;
 
-  
 
-  await crearMapa(
-    container.querySelector("#map"),
-    maravilla.geo.latitude,
-    maravilla.geo.longitude,
-    maravilla.name,
-    true
-  );
+        await crearMapa(
+                container.querySelector("#map"),
+                maravilla.geo.latitude,
+                maravilla.geo.longitude,
+                maravilla.name,
+                true,
+        );
 
-  setTimeout(() => {
-        initializeOwlCarousel();
-      }, 100);
+        setTimeout(() => {
+                initializeOwlCarousel();
+        }, 100);
 
-  return container;
+        return container;
 }

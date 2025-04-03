@@ -67,7 +67,9 @@ async function crearMapa(container, latitud, longitud, nombre, comoLlegar) {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    if (!comoLlegar) {
+    const permisosUbicacion = await navigator.permissions.query({ name: "geolocation" });
+
+    if (!comoLlegar || !permisosUbicacion) {
       L.marker([latitud, longitud]).addTo(map).bindPopup(nombre);
     } else {
 
