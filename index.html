@@ -25,29 +25,33 @@
   <script src="/public/libs/forecast_api.js"></script>
   <script src="/public/components/maravilla_component.js"></script>
   <!-- Librerias externas -->
-   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
-   <!-- Leaflet -->
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
-   <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
-   <!-- JS files -->
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+  <!-- JS files -->
   <script>function initializeOwlCarousel() {
-    // Destruir cualquier instancia anterior de Owl Carousel en el contenedor
-    $('.active-works-carousel').trigger('destroy.owl.carousel').removeClass('owl-loaded');
-  
-    // Re-inicializar el carousel
-    $('.active-works-carousel').owlCarousel({
-      items: 1, // o la configuración que necesites
-      loop: true,
-      margin: 10,
-      nav: false,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      autoplayHoverPause: true
-    });
-  }
+      // Destruir cualquier instancia anterior de Owl Carousel en el contenedor
+      $('.active-works-carousel').trigger('destroy.owl.carousel').removeClass('owl-loaded');
+
+      // Re-inicializar el carousel
+      $('.active-works-carousel').owlCarousel({
+        items: 1, // o la configuración que necesites
+        loop: true,
+        margin: 10,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true
+      });
+    }
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet" />
@@ -71,7 +75,8 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="img/logo.png" alt="" />
+            <img src="public/logo1.png" alt="" />
+            <h1 class="logo-text">7 Maravillas de Mallorca</h2>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,7 +87,7 @@
             <ul class="navbar-nav">
               <li><a href="#home">Inicio</a></li>
               <li><a href="#about">Sobre Nosotros</a></li>
-              <li><a href="#contact">Contacto</a></li>            
+              <li><a href="#contact">Contacto</a></li>
             </ul>
           </div>
         </div>
@@ -99,67 +104,67 @@
           <i class="fa fa-search"></i>
         </button>
         <script>
-          document.getElementById('maravillas-input').addEventListener('keyup', function(e) {
+          document.getElementById('maravillas-input').addEventListener('keyup', function (e) {
             if (e.key === 'Enter') {
               e.preventDefault();
               document.querySelector('.search-button').click();
             }
           });
         </script>
-    </div>
+      </div>
 
-    <div id="suggestions" class="suggestions-container"></div>
+      <div id="suggestions" class="suggestions-container"></div>
     </div>
     <script>
-document.addEventListener('DOMContentLoaded', async function() {
-  const searchInput = document.getElementById('maravillas-input');
-  const suggestionsContainer = document.getElementById('suggestions');
+      document.addEventListener('DOMContentLoaded', async function () {
+        const searchInput = document.getElementById('maravillas-input');
+        const suggestionsContainer = document.getElementById('suggestions');
 
-  try {
-    const maravillas = await getMaravillas(); // usando maravillas_api.js
+        try {
+          const maravillas = await getMaravillas(); // usando maravillas_api.js
 
-    searchInput.addEventListener('input', function(e) {
-      const value = e.target.value.toLowerCase();
-      suggestionsContainer.innerHTML = '';
+          searchInput.addEventListener('input', function (e) {
+            const value = e.target.value.toLowerCase();
+            suggestionsContainer.innerHTML = '';
 
-      if (value.length > 0) {
-        const filteredMaravillas = maravillas.filter(maravilla => 
-          maravilla.name.toLowerCase().includes(value)
-        );
+            if (value.length > 0) {
+              const filteredMaravillas = maravillas.filter(maravilla =>
+                maravilla.name.toLowerCase().includes(value)
+              );
 
-        if (filteredMaravillas.length > 0) {
-          suggestionsContainer.style.display = 'block';
-          filteredMaravillas.forEach(maravilla => {
-            const div = document.createElement('div');
-            div.className = 'suggestion-item';
-            div.textContent = maravilla.name;
-            div.addEventListener('click', () => {
-              searchInput.value = maravilla.name;
+              if (filteredMaravillas.length > 0) {
+                suggestionsContainer.style.display = 'block';
+                filteredMaravillas.forEach(maravilla => {
+                  const div = document.createElement('div');
+                  div.className = 'suggestion-item';
+                  div.textContent = maravilla.name;
+                  div.addEventListener('click', () => {
+                    searchInput.value = maravilla.name;
+                    suggestionsContainer.style.display = 'none';
+                  });
+                  suggestionsContainer.appendChild(div);
+                });
+              } else {
+                suggestionsContainer.style.display = 'none';
+              }
+            } else {
               suggestionsContainer.style.display = 'none';
-            });
-            suggestionsContainer.appendChild(div);
+            }
           });
-        } else {
-          suggestionsContainer.style.display = 'none';
-        }
-      } else {
-        suggestionsContainer.style.display = 'none';
-      }
-    });
 
-    document.addEventListener('click', function(e) {
-      if (!searchInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
-        suggestionsContainer.style.display = 'none';
-      }
-    });
-  } catch (error) {
-    console.error("Error cargando las maravillas:", error);
-  }
-});
-</script>
+          document.addEventListener('click', function (e) {
+            if (!searchInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+              suggestionsContainer.style.display = 'none';
+            }
+          });
+        } catch (error) {
+          console.error("Error cargando las maravillas:", error);
+        }
+      });
+    </script>
 
     <section class="default-banner active-blog-slider">
-      <div class="item-slider relative" style="background: url(img/slider1.jpg); background-size: cover">
+      <div class="item-slider relative" style="background: url(/public/castilloBellver/bellver1.webp); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -175,7 +180,7 @@ document.addEventListener('DOMContentLoaded', async function() {
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(img/slider2.jpg); background-size: cover">
+      <div class="item-slider relative" style="background: url(/public/saCalobra/calobra1.webp); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -191,7 +196,7 @@ document.addEventListener('DOMContentLoaded', async function() {
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(img/slider3.jpg); background-size: cover">
+      <div class="item-slider relative" style="background: url(/public/saForadada/foradada1.webp); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -207,7 +212,7 @@ document.addEventListener('DOMContentLoaded', async function() {
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(img/slider4.jpg); background-size: cover">
+      <div class="item-slider relative" style="background: url(/public/catedralPalma/catedral1.webp); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -222,39 +227,72 @@ document.addEventListener('DOMContentLoaded', async function() {
           </div>
         </div>
       </div>
+      <div class="item-slider relative" style="background: url(/public/covesDrach/drach1.webp); background-size: cover">
+        <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
+        <div class="container">
+          <div class="row fullscreen justify-content-center align-items-center">
+            <div class="col-md-10 col-12">
+              <div class="banner-content text-center">
+                <h4 class="text-white mb-20 text-uppercase">
+                  Descubre las maravillas de Mallorca
+                </h4>
+                <h1 class="text-uppercase text-white">Coves del Drach</h1>
+                <!-- <p class="text-white">texto opcional</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-slider relative" style="background: url(/public/santuarioCura/cura1.webp); background-size: cover">
+        <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
+        <div class="container">
+          <div class="row fullscreen justify-content-center align-items-center">
+            <div class="col-md-10 col-12">
+              <div class="banner-content text-center">
+                <h4 class="text-white mb-20 text-uppercase">
+                  Descubre las maravillas de Mallorca
+                </h4>
+                <h1 class="text-uppercase text-white">Santuario de Cura</h1>
+                <!-- <p class="text-white">texto opcional</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </section>
 
   <!-- Start project Area -->
 
   </div>
-  <section class="project-area section-gap" id= "seccion-maravilla" style="visibility: hidden; display: none;"> </section>
+  <section class="project-area section-gap" id="seccion-maravilla" style="visibility: hidden; display: none;">
+  </section>
 
   <script>
 
-  const searchInput = document.querySelector('.search-input');
-  const searchButton = document.querySelector('.search-button');
-  searchButton.addEventListener('click', async () => {
-    const searchText = searchInput.value.trim();
-    const seccionMaravilla = document.getElementById('seccion-maravilla');
-    
-    try {
-      const maravilla = await getMaravillasByName(searchText);
-      
-      seccionMaravilla.style.visibility = 'visible';
-      seccionMaravilla.style.display = 'block';
-      seccionMaravilla.innerHTML = '';
-      
-      // Usamos la función reutilizable createMaravillaContainer
-      const container = await createMaravillaContainer(maravilla);
-      seccionMaravilla.appendChild(container);
-      
-      seccionMaravilla.scrollIntoView({ behavior: 'smooth' });
-    } catch (error) {
-      console.error("Error:", error);
-      seccionMaravilla.innerHTML = '<div class="container"><div class="row"><div class="col text-center"><h2>Maravilla no encontrada</h2></div></div></div>';
-    }
-  });
+    const searchInput = document.querySelector('.search-input');
+    const searchButton = document.querySelector('.search-button');
+    searchButton.addEventListener('click', async () => {
+      const searchText = searchInput.value.trim();
+      const seccionMaravilla = document.getElementById('seccion-maravilla');
+
+      try {
+        const maravilla = await getMaravillasByName(searchText);
+
+        seccionMaravilla.style.visibility = 'visible';
+        seccionMaravilla.style.display = 'block';
+        seccionMaravilla.innerHTML = '';
+
+        // Usamos la función reutilizable createMaravillaContainer
+        const container = await createMaravillaContainer(maravilla);
+        seccionMaravilla.appendChild(container);
+
+        seccionMaravilla.scrollIntoView({ behavior: 'smooth' });
+      } catch (error) {
+        console.error("Error:", error);
+        seccionMaravilla.innerHTML = '<div class="container"><div class="row"><div class="col text-center"><h2>Maravilla no encontrada</h2></div></div></div>';
+      }
+    });
   </script>
   <!-- End project Area -->
 
@@ -262,8 +300,8 @@ document.addEventListener('DOMContentLoaded', async function() {
   <section class="gallery-area" id="gallery">
     <div class="container-fluid">
       <div class="row no-padding">
-        <div class="active-gallery">
-          <div class="item single-gallery">
+        <div class="active-gallery" id="contenedorFotosCarrousel">
+          <!-- <div class="item single-gallery">
             <img src="img/g1.jpg" alt="" />
           </div>
           <div class="item single-gallery">
@@ -280,11 +318,87 @@ document.addEventListener('DOMContentLoaded', async function() {
           </div>
           <div class="item single-gallery">
             <img src="img/g6.jpg" alt="" />
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
   </section>
+ <!--  <style>/* Contenedor del carrusel */
+    #contenedorFotosCarrousel .item.single-gallery {
+      width: 100%;
+      height: 300px; /* Ajusta el alto según lo que necesites */
+      overflow: hidden;
+    }
+    
+    /* Imágenes dentro del carrusel */
+    #contenedorFotosCarrousel .item.single-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Recorta la imagen para llenar el espacio */
+    }
+    </style>
+
+
+<script>
+  // Función para barajar el array de imágenes
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1)); // Índice aleatorio
+      [array[i], array[j]] = [array[j], array[i]]; // Intercambiar elementos
+    }
+  } 
+   async function cargarImagenes() {
+    try {
+      const maravillas = await getMaravillas(); // Espera a que los datos lleguen
+      let contenedor = document.getElementById("contenedorFotosCarrousel");
+
+      let imagenes = [];
+
+      // Recoger todas las imágenes de todas las maravillas
+      maravillas.forEach((maravilla) => {
+        // Verifica si 'maravilla.image' es un array
+        if (Array.isArray(maravilla.image)) {
+          maravilla.image.forEach((imagenUrl) => {
+            imagenes.push(imagenUrl); // Almacenar la URL de la imagen
+          });
+        } else {
+          // Si 'maravilla.image' no es un array, verificar si es una cadena de texto (URL única)
+          if (typeof maravilla.image === 'string') {
+            imagenes.push(maravilla.image); // Almacenar la URL si es un string
+          }
+        }
+      });
+
+      // Mezclar las imágenes antes de agregarlas
+      shuffle(imagenes);
+
+      // Limpiar el contenedor antes de agregar las nuevas imágenes
+      contenedor.innerHTML = "";
+
+      // Añadir las imágenes mezcladas al contenedor
+      imagenes.forEach((imagenUrl) => {
+        let divFotoCarrousel = document.createElement("div");
+        let divContenedor = document.createElement("div");
+        divContenedor.className = "owl-item active";
+        divFotoCarrousel.className = "item single-gallery";
+        // divFotoCarrousel.className = "item single-gallery";
+
+        let img = document.createElement("img");
+        img.src = imagenUrl;
+        img.alt = "Imagen";
+
+        divFotoCarrousel.appendChild(img);
+        divContenedor.appendChild(divFotoCarrousel);
+        contenedor.appendChild(divContenedor);
+      });
+
+    } catch (error) {
+      console.error("Error al cargar las imágenes:", error);
+    }
+  }
+
+  cargarImagenes(); // Llamar a la función para que se ejecute */ 
+</script>  -->
   <!-- End gallery Area -->
 
   <!-- Start Video Area -->
@@ -292,12 +406,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     <div class="overlay overlay-bg"></div>
     <div class="container">
       <div class="video-content">
-        <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="play-btn"><img src="img/play-btn.png" alt="" /></a>
+        <a href="https://www.youtube.com/watch?v=s_vnbWgnSSs" class="play-btn"><img src="img/play-btn.png" alt="" /></a>
         <div class="video-desc">
           <h3 class="h2 text-white text-uppercase">
-            Being unique is the preference
+            Mallorca, tierra de maravillas
           </h3>
-          <h4 class="text-white">Youtube video will appear in popover</h4>
+          <h4 class="text-white">Haz click para descubrir mallorca</h4>
         </div>
       </div>
     </div>
@@ -311,42 +425,40 @@ document.addEventListener('DOMContentLoaded', async function() {
         <div class="menu-content pb-40 col-lg-8">
           <div class="title text-center">
             <h1 class="mb-10">Sobre nosotros</h1>
-            <p>Who are in extremely love with eco friendly system.</p>
+            <!-- <p>Who are in extremely love with eco friendly system.</p> -->
           </div>
         </div>
       </div>
       <div class="single-info row mt-40">
         <div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left">
           <div class="info-thumb">
-            <img src="img/about-img.jpg" class="img-fluid" alt="" />
+            <img src="public/us.png" class="img-fluid" alt="" />
           </div>
         </div>
         <div class="col-lg-6 col-md-12 no-padding info-rigth">
           <div class="info-content">
             <h2 class="pb-30">
-              We Realize that <br />
-              there are reduced <br />
-              Wastege Stand out
+              Por qué las <br />
+              7 maravillas de <br />
+              Mallorca?
             </h2>
             <p>
-              inappropriate behavior is often laughed off as “boys will be
-              boys,” women face higher conduct standards – especially in the
-              workplace. That’s why it’s crucial that, as women.
+              Decidimos centrarnos en las 7 maravillas de Mallorca porque creemos que la isla tiene una riqueza natural y cultural que merece ser compartida con el mundo. Al destacar estos lugares emblemáticos, 
+              buscamos no solo atraer a los turistas, sino también educar a los residentes y visitantes sobre la historia, la arquitectura y el patrimonio que hacen de Mallorca un destino único.
             </p>
             <br />
             <p>
-              inappropriate behavior is often laughed off as “boys will be
-              boys,” women face higher conduct standards – especially in the
-              workplace. That’s why it’s crucial that, as women. inappropriate
-              behavior is often laughed off as “boys will be boys,” women face
-              higher conduct standards – especially in the workplace. That’s
-              why it’s crucial that, as women.
+              Mallorca es un destino turístico reconocido a nivel mundial, y al enfocarnos en sus maravillas, 
+              queremos ofrecer a los visitantes una guía visual y educativa sobre los lugares más emblemáticos de la isla. 
             </p>
             <br />
             <p>
-              inappropriate behavior is often laughed off as “boys will be
-              boys,” women face higher conduct standards – especially in the
-              workplace. That’s why it’s crucial that, as women.
+              Esta página web servirá como una ventana interactiva para que los usuarios exploren y descubran la belleza oculta de la isla,
+              brindándoles una experiencia inmersiva que permite explorar distintos lugares turísticos.  
+            </p>
+            <br />
+            <p>
+              Plantilla: <a href="https://themewagon.github.io/adventure/"> ThemeWagon: adventure</a>  
             </p>
           </div>
         </div>
@@ -369,25 +481,23 @@ document.addEventListener('DOMContentLoaded', async function() {
         <div class="menu-content pb-60 col-lg-8">
           <div class="title text-center">
             <h1 class="mb-10">Contáctanos</h1>
-            <p>bla bla bla</p>
+            <p>¡Déjanos un mensaje para cualquier duda o sugerencia!</p>
           </div>
         </div>
       </div>
       <form class="form-area" id="myForm" action="mail.php" method="post" class="contact-form text-right">
         <div class="row">
           <div class="col-lg-6 form-group">
-            <input name="name" placeholder="Nombre" onfocus="this.placeholder = ''"
-              onblur="this.placeholder = 'Nombre'" class="common-input mb-20 form-control" required=""
-              type="text" />
+            <input name="name" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'"
+              class="common-input mb-20 form-control" required="" type="text" />
 
             <input name="email" placeholder="Correo electrónico"
               pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''"
               onblur="this.placeholder = 'Correo electrónico'" class="common-input mb-20 form-control" required=""
               type="email" />
 
-            <input name="subject" placeholder="Tema" onfocus="this.placeholder = ''"
-              onblur="this.placeholder = 'Tema'" class="common-input mb-20 form-control" required=""
-              type="text" />
+            <input name="subject" placeholder="Tema" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tema'"
+              class="common-input mb-20 form-control" required="" type="text" />
           </div>
           <div class="col-lg-6 form-group">
             <textarea class="common-textarea mt-10 form-control" name="message" placeholder="Mensaje"

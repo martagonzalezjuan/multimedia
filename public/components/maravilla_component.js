@@ -44,6 +44,9 @@ async function createMaravillaContainer(maravilla) {
                                         index + 1
                                 }
                                                                                                                                                         </h6>
+                                                                                                                                                        <!-- <p class="small">Imagen ${
+                                        index + 1
+                                } de ${maravilla.name}</p> -->
                                                                                                                                                         <p class="small">Imagen ${
                                         index + 1
                                 } de ${maravilla.name}</p>
@@ -152,7 +155,6 @@ async function createMaravillaContainer(maravilla) {
 `;
 
         container.innerHTML = template;
-
 
         await crearMapa(
                 container.querySelector("#map"),

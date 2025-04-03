@@ -67,13 +67,16 @@ async function crearMapa(container, latitud, longitud, nombre, comoLlegar) {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    const permisosUbicacion = await navigator.permissions.query({ name: "geolocation" });
+    let posicionUsuario;
+    try {
+      posicionUsuario = await obtenerUbicacion();
+    } catch (error) {
+      console.error("Error al obtener la ubicacion, agregando marcador:", error);
+    }
 
-    if (!comoLlegar || !permisosUbicacion) {
+    if (!comoLlegar || !posicionUsuario) {
       L.marker([latitud, longitud]).addTo(map).bindPopup(nombre);
     } else {
-
-      const posicionUsuario = await obtenerUbicacion();
 
       L.Routing.control({
         waypoints: [

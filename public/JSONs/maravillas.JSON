@@ -352,7 +352,7 @@
                 "bestRating": 5,
                 "worstRating": 1
             },
-            "image": "https://www.uib.cat/assets/img/logo-uib.png",
+            "image": "public/saForadada/foradada1.webp",
             "description": "La Universitat de les Illes Balears (UIB) es una institución pública de educación superior ubicada en Palma, con un legado histórico y una amplia oferta académica e investigadora en un entorno mediterráneo privilegiado.",
             "telephone": "(+34) 971 17 30 00",
             "url": "https://www.uib.cat",
@@ -398,8 +398,7 @@
             "/public/saForadada/foradada4.webp",
             "/public/saForadada/foradada5.webp",
             "/public/saForadada/foradada6.webp",
-            "/public/saForadada/foradada7.webp",
-            "/public/saForadada/foradada8.webp"
+            "/public/saForadada/foradada7.webp"
             ],
             "description": "Sa Foradada es una península de la Sierra de Tramontana de Mallorca (Islas Baleares, España), que está situada en el término municipal de Deyá. Se caracteriza porque tiene un agujero visible desde varios puntos de la Sierra, cosa que le da nombre, y por su acantilado de 90 metros de altura.",
             "telephone": "None",
