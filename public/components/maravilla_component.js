@@ -38,7 +38,7 @@ const template = `
                                                                                                                                                         <h6 class="text-uppercase">
                                                                                                                                                                         <i class="fas fa-image me-1"></i>Foto ${index + 1}
                                                                                                                                                         </h6>
-                                                                                                                                                        <p class="small">Imagen ${index + 1} de ${maravilla.name}</p>
+                                                                                                                                                        <!-- <p class="small">Imagen ${index + 1} de ${maravilla.name}</p> -->
                                                                                                                                         </div>
                                                                                                                         </div>
                                                                                                         `

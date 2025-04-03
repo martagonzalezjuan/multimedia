@@ -3059,7 +3059,7 @@ tbody.collapse.show {
 }
 
 .navbar-brand {
-  display: inline-block;
+  display: flex; /* antes era inline-block */
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;

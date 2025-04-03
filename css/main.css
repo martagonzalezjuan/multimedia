@@ -1988,6 +1988,11 @@ h6 {
   font-size: 16px;
   margin-bottom: 0;
 }
+.logo-text {
+  color: white;
+  font-size: 30px;
+}
+
 
 @media (max-width: 991px) {
   .section-title p br {
