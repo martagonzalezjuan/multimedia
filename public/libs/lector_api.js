@@ -2,6 +2,7 @@
 // Version: 0.1.0
 // Fecha: 2025-03-30
 
+
 /**
  * Usando las APIs de HTML5 y Web Speech para leer en voz alta el texto
  * @param {string} texto - Texto a leer en voz alta
@@ -49,6 +50,7 @@ function leerEnVozAlta(texto, idioma) {
     };
     return;
   }
+
 
   const utterance = new SpeechSynthesisUtterance(texto);
   utterance.lang = idioma || "es-ES"; // Idioma por defecto español de España

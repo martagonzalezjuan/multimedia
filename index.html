@@ -24,6 +24,8 @@
   <script src="/public/libs/geo_api.js"></script>
   <script src="/public/libs/forecast_api.js"></script>
   <script src="/public/components/maravilla_component.js"></script>
+  <script src="/public/components/search_buttons.js"></script>
+  <script src="/public/components/estrellas_component.js"></script>
   <!-- Librerias externas -->
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -111,18 +113,25 @@
             }
           });
         </script>
+        
       </div>
-
+      
+      <div id="search_buttons">
+        <button class="genric-btn" id="random-button">Aleatorio</button>
+        <button class="genric-btn" id="nearby-button">Cercano</button>
+      </div>
       <div id="suggestions" class="suggestions-container"></div>
     </div>
     <script>
+
+      
+
       document.addEventListener('DOMContentLoaded', async function () {
         const searchInput = document.getElementById('maravillas-input');
         const suggestionsContainer = document.getElementById('suggestions');
 
         try {
           const maravillas = await getMaravillas(); // usando maravillas_api.js
-
           searchInput.addEventListener('input', function (e) {
             const value = e.target.value.toLowerCase();
             suggestionsContainer.innerHTML = '';
@@ -161,6 +170,7 @@
           console.error("Error cargando las maravillas:", error);
         }
       });
+
     </script>
 
     <section class="default-banner active-blog-slider">
@@ -292,6 +302,65 @@
         console.error("Error:", error);
         seccionMaravilla.innerHTML = '<div class="container"><div class="row"><div class="col text-center"><h2>Maravilla no encontrada</h2></div></div></div>';
       }
+    });
+
+
+    // Botón "Aleatorio"
+    document.getElementById('random-button').addEventListener('click', async () => {
+      const maravillas = await getMaravillas();
+      const randomIndex = Math.floor(Math.random() * maravillas.length);
+      const randomMaravilla = maravillas[randomIndex];
+
+      const seccionMaravilla = document.getElementById('seccion-maravilla');
+      seccionMaravilla.style.visibility = 'visible';
+      seccionMaravilla.style.display = 'block';
+      seccionMaravilla.innerHTML = '';
+
+      // Usamos la función reutilizable createMaravillaContainer
+      const container = await createMaravillaContainer(randomMaravilla);
+      seccionMaravilla.appendChild(container);
+
+      seccionMaravilla.scrollIntoView({ behavior: 'smooth' });
+    });
+
+
+    // Botón "Cercano"
+    document.getElementById('nearby-button').addEventListener('click', async () => {
+
+      // Pedimos la ubicación actual del usuario
+      const location = await obtenerUbicacion(); // usando geo_api.js
+      console.log(location);
+
+      const maravillas = await getMaravillas();
+      
+      // Calculamos la distancia euclídea entre la maravilla seleccionada y mi ubicación
+      let minDistancia = Infinity;
+      let maravillaMasCercana = null;
+      maravillas.forEach(maravilla => {
+        const distancia = Math.sqrt(
+          Math.pow(maravilla.geo.latitude - location.latitud, 2) +
+          Math.pow(maravilla.geo.longitude - location.longitud, 2)
+        );
+
+        if (distancia < minDistancia) {
+          minDistancia = distancia;
+          maravillaMasCercana = maravilla;
+        }
+
+        
+        
+      });
+
+      const seccionMaravilla = document.getElementById('seccion-maravilla');
+      seccionMaravilla.style.visibility = 'visible';
+      seccionMaravilla.style.display = 'block';
+      seccionMaravilla.innerHTML = '';
+
+      // Usamos la función reutilizable createMaravillaContainer
+      const container = await createMaravillaContainer(maravillaMasCercana);
+      seccionMaravilla.appendChild(container);
+
+      seccionMaravilla.scrollIntoView({ behavior: 'smooth' });
     });
   </script>
   <!-- End project Area -->

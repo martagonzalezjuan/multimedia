@@ -1,6 +1,8 @@
 async function createMaravillaContainer(maravilla) {
         const container = document.createElement("div");
 
+        
+
         const prevision = await obtenerPronosticoActual(
                 maravilla.geo.latitude,
                 maravilla.geo.longitude,
@@ -9,6 +11,7 @@ async function createMaravillaContainer(maravilla) {
         const template = `
         <div class="container my-5">
                         <!-- Título y descripción -->
+                        <div id="estrellas"></div>
                         <div class="row justify-content-center">
                                         <div class="col-lg-10 text-center">
                                                         <h2 class="mb-3" id="nombreMaravilla">
@@ -155,6 +158,13 @@ async function createMaravillaContainer(maravilla) {
 `;
 
         container.innerHTML = template;
+
+        
+
+        // Obtenemos el contenedor estrellas
+        const contenedorEstrellas = container.querySelector("#estrellas");
+        // Creamos las estrellas y las añadimos al contenedor
+        mostrarEstrellas(maravilla.aggregateRating.ratingValue, contenedorEstrellas);
 
         await crearMapa(
                 container.querySelector("#map"),
