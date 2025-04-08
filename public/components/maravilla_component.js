@@ -16,13 +16,7 @@ async function createMaravillaContainer(maravilla) {
                                         <div class="col-lg-10 text-center">
                                                         <h2 class="mb-3" id="nombreMaravilla">
                                                                         ${maravilla.name}
-                                                                        <i id="lector-ciegos" 
-                                                                                 style="cursor: pointer;" 
-                                                                                 onmouseover="this.style.color='#007bff'" 
-                                                                                 onmouseout="this.style.color='inherit'" 
-                                                                                 onClick="leerEnVozAlta(document.querySelector('#descripcion').innerText)" 
-                                                                                 class="fas fa-volume-up me-4">
-                                                                        </i>
+                                                                        <div id="lector-container"</div>
                                                         </h2>
                                                         
                                                         <p id="descripcion" class="lead" style="font-size: 0.73rem;">${maravilla.description}</p>
@@ -173,6 +167,11 @@ async function createMaravillaContainer(maravilla) {
                 maravilla.name,
                 true,
         );
+
+        // Obtenemos el contenedor de lector
+        const lectorContainer = container.querySelector("#lector-container");
+        // Creamos el componente lector y lo añadimos al contenedor
+        createLectorComponent(maravilla.description, lectorContainer);
 
         setTimeout(() => {
                 initializeOwlCarousel();

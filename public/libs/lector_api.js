@@ -1,7 +1,6 @@
 // Libreria para interactuar con la API de Voz Lector Automático
-// Version: 0.1.0
+// Version: 0.2.0
 // Fecha: 2025-03-30
-
 
 /**
  * Usando las APIs de HTML5 y Web Speech para leer en voz alta el texto
@@ -31,6 +30,9 @@ function leerEnVozAlta(texto, idioma) {
     return;
   }
 
+  // Cancelamos cualquier lectura previa
+  cancelarLectura();
+
   // Verifica si hay voces disponibles
   const voces = window.speechSynthesis.getVoices();
   if (voces.length === 0) {
@@ -51,7 +53,6 @@ function leerEnVozAlta(texto, idioma) {
     return;
   }
 
-
   const utterance = new SpeechSynthesisUtterance(texto);
   utterance.lang = idioma || "es-ES"; // Idioma por defecto español de España
 
@@ -60,4 +61,57 @@ function leerEnVozAlta(texto, idioma) {
   utterance.onend = function () {
     console.log("Lectura completada.");
   };
+}
+
+/**
+ * Pausa la lectura actual
+ * @returns {boolean} - true si se pudo pausar, false en caso contrario
+ */
+function pausarLectura() {
+  if (!("speechSynthesis" in window)) {
+    console.error("La API de síntesis de voz no está soportada en este navegador.");
+    return false;
+  }
+  
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.pause();
+    console.log("Lectura pausada.");
+    return true;
+  }
+  
+  return false;
+}
+
+/**
+ * Reanuda la lectura pausada
+ * @returns {boolean} - true si se pudo reanudar, false en caso contrario
+ */
+function reanudarLectura() {
+  if (!("speechSynthesis" in window)) {
+    console.error("La API de síntesis de voz no está soportada en este navegador.");
+    return false;
+  }
+  
+  if (window.speechSynthesis.paused) {
+    window.speechSynthesis.resume();
+    console.log("Lectura reanudada.");
+    return true;
+  }
+  
+  return false;
+}
+
+/**
+ * Cancela la lectura actual
+ * @returns {boolean} - true si se pudo cancelar, false en caso contrario
+ */
+function cancelarLectura() {
+  if (!("speechSynthesis" in window)) {
+    console.error("La API de síntesis de voz no está soportada en este navegador.");
+    return false;
+  }
+  
+  window.speechSynthesis.cancel();
+  console.log("Lectura cancelada.");
+  return true;
 }
