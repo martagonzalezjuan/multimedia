@@ -42,10 +42,10 @@ if ($method === 'POST') {
     // Se espera que los datos se envíen en formato JSON
     $input = json_decode(file_get_contents('php://input'), true);
 
-    // Validación básica: se requieren 'nombre' y 'email'
-    if (!isset($input['nombre']) || !isset($input['email'])) {
+    // Validación básica: se requieren 'email'
+    if (!isset($input['email'])) {
         http_response_code(400);
-        echo json_encode(["error" => "Faltan campos requeridos: nombre y email"]);
+        echo json_encode(["error" => "Faltan campos requeridos: email"]);
         exit;
     }
 
@@ -55,7 +55,6 @@ if ($method === 'POST') {
         "@type"     => "SubscribeAction",
         "agent"     => [
             "@type" => "Person",
-            "name"  => $input['nombre'],
             "email" => $input['email']
         ],
         "startTime" => date("c") // Fecha actual en formato ISO 8601
