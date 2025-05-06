@@ -1,6 +1,6 @@
 version: "3"
 services:
   php-apache:
-    build: .
+    build: ./public
     ports:
       - "80:80"

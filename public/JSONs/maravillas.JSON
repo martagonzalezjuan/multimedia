@@ -15,15 +15,15 @@
                 "worstRating": 1
             },
             "image": 
-                ["/public/castilloBellver/bellver1.webp",
-                "/public/castilloBellver/bellver2.webp",
-                "/public/castilloBellver/bellver3.webp",
-                "/public/castilloBellver/bellver4.webp", 
-                "/public/castilloBellver/bellver5.webp",
-                "/public/castilloBellver/bellver6.webp",
-                "/public/castilloBellver/bellver7.webp",
-                "/public/castilloBellver/bellver8.webp",
-                "/public/castilloBellver/bellver9.webp" ],
+                ["/castilloBellver/bellver1.webp",
+                "/castilloBellver/bellver2.webp",
+                "/castilloBellver/bellver3.webp",
+                "/castilloBellver/bellver4.webp", 
+                "/castilloBellver/bellver5.webp",
+                "/castilloBellver/bellver6.webp",
+                "/castilloBellver/bellver7.webp",
+                "/castilloBellver/bellver8.webp",
+                "/castilloBellver/bellver9.webp" ],
                 
             "description": "Elevándose sobre una colina boscosa a 112 metros de altura, el Castillo de Bellver es uno de los monumentos más emblemáticos de Palma de Mallorca y una de las fortalezas más singulares de Europa. Construido a principios del siglo XIV por orden del rey Jaime II de Mallorca, esta imponente edificación destaca no solo por su estratégica ubicación con vistas panorámicas a la bahía de Palma, sino también por su inusual diseño circular, una característica poco común en la arquitectura militar medieval. A lo largo de los siglos, el castillo ha cumplido diversas funciones: desde residencia real hasta prisión militar, albergando a figuras históricas y siendo testigo de algunos de los momentos más turbulentos de la historia mallorquina. Su estructura, compuesta por un gran patio central rodeado de cuatro torres, refleja la influencia del gótico catalán y su concepción tanto como fortaleza defensiva como espacio habitable. Hoy en día, el Castillo de Bellver es un símbolo cultural de Mallorca y alberga el Museo de Historia de la Ciudad, donde los visitantes pueden descubrir el pasado de la isla a través de exposiciones y piezas arqueológicas. Además, su ubicación privilegiada lo convierte en un mirador excepcional desde el que se pueden contemplar impresionantes vistas de Palma, el puerto y el mar Mediterráneo. Caminar por sus murallas, explorar su interior y sumergirse en su historia es una experiencia que transporta a otra época, permitiendo a los visitantes imaginar cómo era la vida en este castillo hace más de 700 años. Si buscas un lugar donde historia, arquitectura y naturaleza se fusionan en un entorno único, el Castillo de Bellver es una visita imprescindible en Mallorca.",
             "telephone": "(+34) 971 73 50 65",
@@ -95,11 +95,11 @@
                 "worstRating": 1
             },
             "image": 
-            ["/public/saCalobra/calobra1.webp",
-            "/public/saCalobra/calobra2.webp",
-            "/public/saCalobra/calobra3.webp",
-            "/public/saCalobra/calobra4.webp",
-            "/public/saCalobra/calobra5.webp"
+            ["/saCalobra/calobra1.webp",
+            "/saCalobra/calobra2.webp",
+            "/saCalobra/calobra3.webp",
+            "/saCalobra/calobra4.webp",
+            "/saCalobra/calobra5.webp"
             ],
             "description": "Sa Calobra es una cala del municipio de Escorca, se encuentra situada en plena sierra de Tramuntana y es al mismo tiempo núcleo turístico que toma el nombre de una pequeña aldea que había en las proximidades.",
             "telephone": "None",
@@ -139,15 +139,15 @@
                 "worstRating": 1
             },
            "image": 
-            ["/public/catedralPalma/catedral1.webp",
-            "/public/catedralPalma/catedral2.webp",
-            "/public/catedralPalma/catedral3.webp",
-            "/public/catedralPalma/catedral4.webp",
-            "/public/catedralPalma/catedral5.webp",
-            "/public/catedralPalma/catedral6.webp",
-            "/public/catedralPalma/catedral7.webp",
-            "/public/catedralPalma/catedral8.webp",
-            "/public/catedralPalma/catedral9.webp"],
+            ["/catedralPalma/catedral1.webp",
+            "/catedralPalma/catedral2.webp",
+            "/catedralPalma/catedral3.webp",
+            "/catedralPalma/catedral4.webp",
+            "/catedralPalma/catedral5.webp",
+            "/catedralPalma/catedral6.webp",
+            "/catedralPalma/catedral7.webp",
+            "/catedralPalma/catedral8.webp",
+            "/catedralPalma/catedral9.webp"],
             "description": "La Catedral-Basílica de Santa María en Palma, también llamada Catedral de Mallorca, es el principal edificio religioso de la isla de Mallorca. En mallorquín, se la conoce como La Seu. Consiste en un templo de estilo gótico levantino construido a la orilla de la bahía de Palma.​",
             "telephone": "(+34) 971 71 31 33",
             "url": "https://catedraldemallorca.org/en/",
@@ -219,12 +219,12 @@
                 "worstRating": 1
             },
             "image": 
-            ["/public/covesDrach/drach1.webp",
-            "/public/covesDrach/drach2.webp",
-            "/public/covesDrach/drach3.webp",
-            "/public/covesDrach/drach4.webp",
-            "/public/covesDrach/drach5.webp",
-            "/public/covesDrach/drach6.webp"
+            ["/covesDrach/drach1.webp",
+            "/covesDrach/drach2.webp",
+            "/covesDrach/drach3.webp",
+            "/covesDrach/drach4.webp",
+            "/covesDrach/drach5.webp",
+            "/covesDrach/drach6.webp"
             ],
             "description": "Las cuevas del Drach son cuatro grandes cuevas que se encuentran en la isla española de Mallorca, Baleares. Se hallan en el municipio de Manacor, cerca de la localidad de Porto Cristo, donde también se ubican las cuevas del Hams, y permanecen abiertas al público durante todo el año.",
             "telephone": "(+34) 971 820 753",
@@ -308,11 +308,11 @@
                 "worstRating": 1
             },
             "image": 
-            ["/public/santuarioCura/cura1.webp",
-            "/public/santuarioCura/cura2.webp",
-            "/public/santuarioCura/cura3.webp",
-            "/public/santuarioCura/cura4.webp",
-            "/public/santuarioCura/cura5.webp"
+            ["/santuarioCura/cura1.webp",
+            "/santuarioCura/cura2.webp",
+            "/santuarioCura/cura3.webp",
+            "/santuarioCura/cura4.webp",
+            "/santuarioCura/cura5.webp"
             ],
             "description": "El santuario de Cura es un monasterio religioso situado en la cima del puig de Randa, en el municipio español de Algaida, isla de Mallorca, la mayor del archipiélago balear. Según cuenta la tradición, ocupa el lugar en el cual se retiró y recibió la iluminación el beato Ramon Llull. Además en este monasterio se da culto a la imagen de la Virgen de Cura.",
             "telephone": "(+34) 971 120 260",
@@ -392,13 +392,13 @@
                 "worstRating": 1
             },
             "image": 
-            ["/public/saForadada/foradada1.webp",
-            "/public/saForadada/foradada2.webp",
-            "/public/saForadada/foradada3.webp",
-            "/public/saForadada/foradada4.webp",
-            "/public/saForadada/foradada5.webp",
-            "/public/saForadada/foradada6.webp",
-            "/public/saForadada/foradada7.webp"
+            ["/saForadada/foradada1.webp",
+            "/saForadada/foradada2.webp",
+            "/saForadada/foradada3.webp",
+            "/saForadada/foradada4.webp",
+            "/saForadada/foradada5.webp",
+            "/saForadada/foradada6.webp",
+            "/saForadada/foradada7.webp"
             ],
             "description": "Sa Foradada es una península de la Sierra de Tramontana de Mallorca (Islas Baleares, España), que está situada en el término municipal de Deyá. Se caracteriza porque tiene un agujero visible desde varios puntos de la Sierra, cosa que le da nombre, y por su acantilado de 90 metros de altura.",
             "telephone": "None",

@@ -17,15 +17,15 @@
   <!-- Site Title -->
   <title>7 Maravillas de Mallorca</title>
   <!-- CSS Propio -->
-  <!-- <link rel="stylesheet" href="/public/css/searchbar.css" /> -->
+  <!-- <link rel="stylesheet" href="/css/searchbar.css" /> -->
   <!-- JS Propios -->
-  <script src="/public/libs/maravillas_api.js"></script>
-  <script src="/public/libs/lector_api.js"></script>
-  <script src="/public/libs/geo_api.js"></script>
-  <script src="/public/libs/forecast_api.js"></script>
-  <script src="/public/components/maravilla_component.js"></script>
-  <script src="/public/components/estrellas_component.js"></script>
-  <script src="/public/components/lector_component.js"></script>
+  <script src="/libs/maravillas_api.js"></script>
+  <script src="/libs/lector_api.js"></script>
+  <script src="/libs/geo_api.js"></script>
+  <script src="/libs/forecast_api.js"></script>
+  <script src="/components/maravilla_component.js"></script>
+  <script src="/components/estrellas_component.js"></script>
+  <script src="/components/lector_component.js"></script>
   <!-- Librerias externas -->
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -60,13 +60,13 @@
   <!--
 			CSS
 			============================================= -->
-  <link rel="stylesheet" href="css/linearicons.css" />
-  <link rel="stylesheet" href="css/font-awesome.min.css" />
-  <link rel="stylesheet" href="css/bootstrap.css" />
-  <link rel="stylesheet" href="css/magnific-popup.css" />
+  <link rel="stylesheet" href="/css/linearicons.css" />
+  <link rel="stylesheet" href="/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap.css" />
+  <link rel="stylesheet" href="/css/magnific-popup.css" />
   <!-- <link rel="stylesheet" href="css/animate.min.css" /> -->
-  <link rel="stylesheet" href="css/owl.carousel.css" />
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="/css/owl.carousel.css" />
+  <link rel="stylesheet" href="/css/main.css" />
 </head>
 
 <body>
@@ -78,7 +78,7 @@
         <div class="container">
           <a class="navbar-brand" href="index.html">
             <svg height="40" width="40">
-              <image height="40" width="40" href="/public/mallorca.svg" />
+              <image height="40" width="40" href="/mallorca.svg" />
             </svg>
             <h1 class="logo-text">7 Maravillas de Mallorca</h2>
           </a>
@@ -176,7 +176,7 @@
     </script>
 
     <section class="default-banner active-blog-slider">
-      <div class="item-slider relative" style="background: url(public/castilloBellver/bellver1.webp); background-size: cover">
+      <div class="item-slider relative" style="background: url(/castilloBellver/bellver1.webp); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -192,7 +192,7 @@
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(/public/saCalobra/calobra1.webp); background-size: cover">
+      <div class="item-slider relative" style="background: url(/saCalobra/calobra1.webp); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -208,7 +208,7 @@
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(/public/saForadada/foradada1.webp); background-size: cover">
+      <div class="item-slider relative" style="background: url(/saForadada/foradada1.webp); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -224,7 +224,7 @@
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(/public/catedralPalma/catedral1.webp); background-size: cover">
+      <div class="item-slider relative" style="background: url(/catedralPalma/catedral1.webp); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -239,7 +239,7 @@
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(/public/covesDrach/drach1.webp); background-size: cover">
+      <div class="item-slider relative" style="background: url(/covesDrach/drach1.webp); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -255,7 +255,7 @@
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(/public/santuarioCura/cura1.webp); background-size: cover">
+      <div class="item-slider relative" style="background: url(/santuarioCura/cura1.webp); background-size: cover">
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -503,7 +503,7 @@
       <div class="single-info row mt-40">
         <div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left">
           <div class="info-thumb">
-            <img src="public/us.png" class="img-fluid" alt="" />
+            <img src="/us.png" class="img-fluid" alt="" />
           </div>
         </div>
         <div class="col-lg-6 col-md-12 no-padding info-rigth">
@@ -592,7 +592,7 @@
       };
 
       try {
-          const response = await fetch("/public/php/contacto.php", {
+          const response = await fetch("/php/contacto.php", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json"
@@ -665,7 +665,7 @@
                 const infoDiv = form.querySelector('.info');
                 
                 try {
-                  const response = await fetch("/public/php/newsletter.php", {
+                  const response = await fetch("/php/newsletter.php", {
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json"
