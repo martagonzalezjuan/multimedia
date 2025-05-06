@@ -17,7 +17,7 @@
   <!-- Site Title -->
   <title>7 Maravillas de Mallorca</title>
   <!-- CSS Propio -->
-  <link rel="stylesheet" href="/public/css/searchbar.css" />
+  <!-- <link rel="stylesheet" href="/public/css/searchbar.css" /> -->
   <!-- JS Propios -->
   <script src="/public/libs/maravillas_api.js"></script>
   <script src="/public/libs/lector_api.js"></script>
@@ -591,7 +591,7 @@
       };
 
       try {
-          const response = await fetch("/php/contacto.php", {
+          const response = await fetch("/public/php/contacto.php", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json"
@@ -664,7 +664,7 @@
                 const infoDiv = form.querySelector('.info');
                 
                 try {
-                  const response = await fetch("/php/newsletter.php", {
+                  const response = await fetch("/public/php/newsletter.php", {
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json"
@@ -675,8 +675,10 @@
                   const result = await response.json();
                   if (response.ok) {
                     infoDiv.innerHTML = '<div class="alert alert-success">¡Gracias por suscribirte!</div>';
+                    alert("¡Gracias por suscribirte!");
                     form.reset();
                   } else {
+                    alert("Error: " + (result.error || "No se pudo completar la suscripción"));
                     infoDiv.innerHTML = '<div class="alert alert-danger">Error: ' + (result.error || "No se pudo completar la suscripción") + '</div>';
                   }
                 } catch (error) {
