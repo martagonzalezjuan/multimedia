@@ -298,6 +298,9 @@
         // Usamos la función reutilizable createMaravillaContainer
         const container = await createMaravillaContainer(maravilla);
         seccionMaravilla.appendChild(container);
+        
+        // Add video for the selected maravilla
+        crearVideoMaravilla(maravilla);
 
         seccionMaravilla.scrollIntoView({ behavior: 'smooth' });
       } catch (error) {
@@ -321,6 +324,9 @@
       // Usamos la función reutilizable createMaravillaContainer
       const container = await createMaravillaContainer(randomMaravilla);
       seccionMaravilla.appendChild(container);
+
+      // Add video for the random maravilla
+      crearVideoMaravilla(randomMaravilla);
 
       seccionMaravilla.scrollIntoView({ behavior: 'smooth' });
     });
@@ -361,6 +367,9 @@
       // Usamos la función reutilizable createMaravillaContainer
       const container = await createMaravillaContainer(maravillaMasCercana);
       seccionMaravilla.appendChild(container);
+
+      // Add video for the nearby maravilla
+      crearVideoMaravilla(maravillaMasCercana);
 
       seccionMaravilla.scrollIntoView({ behavior: 'smooth' });
     });
@@ -473,6 +482,15 @@
   <!-- End gallery Area -->
 
   <!-- Start Video Area -->
+   <script>
+     function crearVideoMaravilla(maravilla){
+      const videoArea = document.querySelector('.video-area');
+      videoArea.style.backgroundImage = `url(${maravilla.image[0]})`;
+      videoArea.querySelector('.video-content a').href = maravilla.video;
+      videoArea.querySelector('.video-desc h3').textContent = maravilla.name;
+      videoArea.querySelector('.video-desc h4').textContent = "Haz click para descubrir " + maravilla.name;
+     }
+  </script>
   <section class="video-area pt-40 pb-40">
     <div class="overlay overlay-bg"></div>
     <div class="container">

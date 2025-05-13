@@ -2,7 +2,7 @@
 // Version: 0.1.0
 // Fecha: 2025-03-30
 
-const URL_JSON = "/JSONs/maravillas.json";
+const URL_JSON = "https://www.7maravillasmallorca.com/JSONs/maravillas.json";
 
 /**
  * Función para obtener todas las maravillas
