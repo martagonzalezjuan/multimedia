@@ -1,0 +1,1138 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "recipe-1": {
+                "@type": "Recipe",
+                "name": "Frit Mallorquí",
+                "image": "assets/img/menu/frit-mallorqui.webp",
+                "description": "Quan proves el frit mallorquí, el plat tradicional balear per excel·lència, entens el perquè de la seva popularitat i els seus segles d’història. La recepta té origen en la cultura sefardí, de les costums culinàries dels que viuen o descendeixen dels jueus procedents d’Espanya, amb influencies clares de la cuina àrab i turca. Una barreja de sabors que combina el xai, la patata i les verdures fregides, acabades amb un toc de laurel. Assaboreix la màxima expresso i cultura mallorquina amb aquesta recepta, que conta amb totes les avantatges de la saludable i completa mediterrània.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2024-03-15",
+                "recipeCategory": "entrants",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT1H",
+                "recipeYield": "4 persones",
+                "recipeIngredient": [
+                    "1/2 fetge de xot",
+                    "1 cor de xot",
+                    "1 pulmó de xot",
+                    "3 patates mitjanes",
+                    "2 pebrots vermells mitjans",
+                    "200 g de coliflor",
+                    "150 g de pèsols",
+                    "1 manat de ceba tendra",
+                    "1 fonoll",
+                    "7 grans d'all",
+                    "Oli d'Oliva Verge Extra",
+                    "5 fulles de llorer",
+                    "Sal",
+                    "Pebre"
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "Fregir la patata tallada a trossos, salar i reservar."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Fregir el pebrot trossejat i reservar amb les patates. Després, fer el mateix amb la coliflor."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Fregir el fetge, el cor i el pulmó per separat, i afegir-ho a les verdures fregides."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Saltar els grans d'all sencers amb la pell, havent-los donat un cop prèviament. Afegir la ceba tendra tallada petita. Afegir les fulles de llorer i els pèsols. Salpebrar."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Ajuntar tots els ingredients, mesclar-los, emplatar i escampar una mica de fonoll per sobre.."
+                    }
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": null
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "350 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": null,
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Ca na Toneta",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer Major, 12",
+                        "addressLocality": "Palma",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.6953,
+                        "longitude": 3.0176
+                    }
+                }
+            },
+            "recipe-2": {
+                "@type": "Recipe",
+                "name": "Caragols",
+                "image": "assets/img/menu/caragols.webp",
+                "description": "Els caragols són un dels plats més tradicionals de la gastronomia mallorquina, especialment populars durant la primavera.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2024-03-15",
+                "recipeCategory": "principals",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT1H45M",
+                "recipeYield": "4 persones",
+                "recipeIngredient": [
+                    "2kg de caragols congelats",
+                    "300g de costella de porc",
+                    "1/4 de pollastre",
+                    "1/4 de conill",
+                    "2 botifarrons",
+                    "2 cebes blanques",
+                    "2 tomàquets",
+                    "2 pastilles de brou",
+                    "2 manats d'herbes aromàtiques",
+                    "1 tros de pernil",
+                    "1 tassó de vi blanc",
+                    "Sal i pebre",
+                    "Oli d'oliva"
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "Rentar bé les carns i tallar-les a trossos. Eixugar-les amb paper de cuina"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Tallar la ceba en brunoise i pelar el tomàquet i els alls"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "En una cassola amb oli d'oliva, sofregir la ceba picada"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Quan la ceba estigui pochada, afegir el tomàquet pelat i cuinar a foc lent"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Netejar els caragols molt bé. En una olla amb aigua freda, cuinar-los a foc mitjà. Quan comencin a bullir, deixar tres minuts i treure l'aigua"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Posar aigua neta i afegir les herbes aromàtiques. Bullir aproximadament una hora"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "A la cassola amb la ceba i el tomàquet, afegir totes les carns, el pernil trossejat i els botifarrons. Barrejar i afegir el brou de pollastre"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Incorporar el vi blanc i les fulles de llorer. Cuinar fins que s'evapori l'alcohol"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Quan els caragols estiguin llestos, passar-los a l'olla amb el guisat. Incorporar el brou dels caragols per donar-li el gust d'herbes"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegir sal i pebre, cuinar cinc minuts més i retirar les herbes. Cuinar uns minuts més i servir"
+                    }
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/embed/Y7f98aduVJ8"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "250 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": "març",
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Ca na Toneta",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer Major, 12",
+                        "addressLocality": "Palma",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.6953,
+                        "longitude": 3.0176
+                    }
+                }
+            },
+            "recipe-3":{
+                "@type": "Recipe",
+                "name": "Sopes Mallorquines",
+                "image": "assets/img/menu/sopes-mallorquines.webp",
+                "description": "Les sopes mallorquines son uns dels plats més emblemàtics de la gastronomia balear, és tipic de l'hivern i destaca per la seva senzillesa.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2025-03-22",
+                "recipeCategory": "principals",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT1H15M",
+                "recipeYield": "4 persones",
+                "recipeIngredient": [
+                    "400g de pa de sopes",
+                    "100g grams de xuia",
+                    "100g de bolets",
+                    "2 botifarrons",
+                    "1 cebes blanques",
+                    "2 tomàquets",
+                    "2 pebrots verds",
+                    "2 alls",
+                    "1L de brou (vegetal o de carn)",
+                    "1 tassó de vi blanc",
+                    "1 cullerada de pebre vermell dolç",
+                    "Sal i pebre",
+                    "Oli d'oliva",
+                    "Juliverd fresc"
+                    
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "Picar la ceba i els alls."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Tallar el pebrot verd, els tomàquets sense pell i la col a tires fines."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Netejar i tallar els bolets"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Escalfar un raig d'oli idns una cassola."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegir la ceba i els alls i sofregir fins que quedi transparent."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegir el pebrot i el tomàquets i cuinar-los fins que es confitin."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegir el pebre vermell dolç i remanar per evitar que es cremi."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegir la col i els bolets, sofregir uns minuts i afegir el brou calent."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegir la sal i el pebre bo al gust i deixar coure a foc lent 15 minuts."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Retirar la cassola del foc i per sobre, repartir en capes el pa de sopes."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Deixar reposar un 10 minuts per que el pa absorbeixi el brou."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Decorar amb juliverd fresc picat i afegir un raig d'oli."
+                    }
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/watch?v=tHI46NhXYho"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "350 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": "gener",
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Ca na Toneta",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer Major, 12",
+                        "addressLocality": "Palma",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.6953,
+                        "longitude": 3.0176
+                    }
+                }
+            },
+            "recipe-4": {
+                "@type": "Recipe",
+                "name": "Tumbet",
+                "image": "assets/img/menu/tumbet.webp",
+                "description": "El Tumbet és un plat típic de Mallorca que consisteix en una capa de patates, albergínies i pebrots fregits, coberts amb una salsa de tomàquet. És un plat molt saborós i saludable.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2024-03-15",
+                "recipeCategory": "principals",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT1H30M",
+                "recipeYield": "4 persones",
+                "recipeIngredient": [
+                    "4 patates",
+                    "2 albergínies",
+                    "2 pebrots vermells",
+                    "2 tomàquets",
+                    "2 dents d'all",
+                    "Oli d'oliva",
+                    "Sal",
+                    "Pebre"
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "Pelar i tallar les patates en rodanxes fines. Fregir-les en oli d'oliva fins que estiguin daurades. Escórrer-les i reservar."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Tallar les albergínies en rodanxes i fregir-les en oli d'oliva. Escórrer-les i reservar."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Tallar els pebrots en tires i fregir-los en oli d'oliva. Escórrer-los i reservar."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Preparar la salsa de tomàquet: picar els tomàquets i les dents d'all, i cuinar-los en una paella amb una mica d'oli d'oliva fins que es formi una salsa."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "En una cassola, col·locar una capa de patates, una capa d'albergínies i una capa de pebrots. Cobrir amb la salsa de tomàquet."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Coure al forn preescalfat a 180°C durant 20 minuts."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Servir calent."
+                    }
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/embed/example2"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "300 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": "juny",
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Celler Ca'n Ripoll",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer d'en Jaume Armengol, 4",
+                        "addressLocality": "Inca",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.7205505,
+                        "longitude":2.9088065
+                    }
+                }
+            },
+            "recipe-5": {
+                "@type": "Recipe",
+                "name": "Cardenal de Lloseta",
+                "image": "assets/img/menu/cardenal-lloseta.webp",
+                "description": "El Cardenal de Lloseta és un postre típic de Mallorca, fet amb merenga, nata i pa de pessic. És un postre molt dolç i tradicional.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2024-03-15",
+                "recipeCategory": "postres",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT45M",
+                "recipeYield": "4 persones",
+                "recipeIngredient": [
+                    "500 ml de nata",
+                    "4 cullerades de sucre",
+                    "3 ous",
+                    "mig tassó de llet",
+                    "100 grams de sucre",
+                    "75 grams de farina",
+                    "mig sobre de llevat en pols",
+                    "5 clares d'ou"
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "Posar la nata freda en un bol, afegir quatre cullerades de sucre i muntar-la. Reservar a la nevera."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Separar les clares i els rovells en dos recipients. Muntar les clares a punt de neu."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegir el sucre als rovells i batre fins que blanquegi. Incorporar la llet, la farina i el llevat en pols mentre es bat."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Incorporar les clares muntades amb moviments envoltants."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Abocar la barreja en una safata de forn folrada amb paper vegetal i coure a 160ºC durant 15 minuts."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Preparar el merenga: escalfar al bany maria el sucre amb les clares, remenant fins que blanquegi. Muntar la barreja i posar-la en una mànega pastissera."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Sobre tires de paper vegetal en una safata, fer tires de merenga amb la mànega pastissera. Coure al forn a 160ºC durant 15 minuts."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Per muntar el cardenal: posar una de les tires de merenga, afegir el pa de pessic tallat a la mateixa mida."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Untar la part superior del pa de pessic amb nata i col·locar a sobre les altres tires de merenga i pa de pessic per formar una mena d'entrepà."
+                    }
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/embed/example3"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "400 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": "novembre",
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Celler Sa Plaça",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer Esglèsia, 16",
+                        "addressLocality": "Lloseta",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.7196586,
+                        "longitude":2.8648221
+                    }
+                }
+            },
+            "recipe-6":{
+                "@type": "Recipe",
+                "name": "Coca de Trampó",
+                "image": "assets/img/menu/coca-de-trempo.webp",
+                "description": "La coca de trampó és un plat tradicional de Mallorca.És una coca lleugera i mediterrània, perfecta per als mesos d'estiu.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2024-03-15",
+                "recipeCategory": "entrants",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT1H30M",
+                "recipeYield": "4 persones",
+                "recipeIngredient": [
+                    "300g de farina",
+                    "100ml d'aigua tèbia",
+                    "100ml d'oli d'oliva",
+                    "10g de llevat",
+                    "Sal",
+                    "1 pebrot verd",
+                    "1 pebrot vermell",
+                    "1 ceba",
+                    "Pebre bo"
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "En un bol gran, barreja l’aigua tèbia amb el llevat fins que es dissolgui completament."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegeix l’oli d’oliva i un polsim de sal. Remena bé."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Incorpora la farina a poc a poc mentre vas barrejant amb les mans o amb una espàtula."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Amasa fins a obtenir una massa suau i homogènia."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Forma una bola i deixa-la reposar tapada amb un drap net durant uns 30-40 minuts fins que dobli el volum."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Talla els tomàquets i els pebrots a daus petits.Talla la ceba a làmines fines o també a daus."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Posa-ho tot en un bol, afegeix sal, pebre bo i un raig d’oli d’oliva. Remena bé."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Preescalfa el forn a 180 °C."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Estira la massa sobre una safata de forn folrada amb paper de forn, donant-li forma rectangular i deixant un gruix d’uns 5 mm."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Reparteix el trampó uniformement per sobre de la massa."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Introdueix la coca al forn i enforna durant 30-35 minuts fins que la massa estigui daurada i cruixent."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Treu la coca del forn i deixa-la refredar una mica abans de tallar-la."
+                    }
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/watch?v=6AC_T-dkDD8"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "250 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": "juny",
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Forn Can Amer",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer Mossèn Galmés, 76",
+                        "addressLocality": "Sant Llorenç des Cardassar",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.7196586,
+                        "longitude":2.8648221
+                    }
+                }
+            },
+            "recipe-7":{
+                "@type": "Recipe",
+                "name": "Arròs Brut",
+                "image": "assets/img/menu/arros-brut.webp",
+                "description": "L’arròs brut és un plat tradicional de Mallorca, calent, melós i especiat, ideal per als mesos freds.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2024-03-15",
+                "recipeCategory": "principals",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT1H15M",
+                "recipeYield": "4 persones",
+                "recipeIngredient": [
+                    "300g d'arròs bomba",
+                    "1L de brou pollastre",
+                    "2 cuixes de pollastre",
+                    "200g de costella de porc",
+                    "200g de conill a trossos",
+                    "100g de botifarró",
+                    "1 tomàquet",
+                    "1 pebrot",
+                    "1 ceba",
+                    "2 grans d'all",
+                    "50 ml d'oli",
+                    "Sal i pebre al gust",
+                    "1 fulla de llorer",
+                    "1/2 cullerada de canyella en pols",
+                    "1/2 cullerada de pebre vermell dolç",
+                    "1/2 cullerada de pebre negre mòlt",
+                    "1 pessic de nou moscada",
+                    "1 branca de safrà"
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "Pela i pica la ceba i els alls ben petits."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Talla el pebrot verd a trossets."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Ralla o pela el tomàquet i reserva’l"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Neteja i talla els bolets en làmines."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Talla el botifarró a rodanxes."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "En una cassola ampla o greixonera, escalfa l’oli d’oliva a foc mig-alt."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegeix el pollastre, la costella de porc i el conill. Sofregeix fins que quedin daurats per totes bandes."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Incorpora la ceba i l’all picats i remena bé. Quan la ceba sigui transparent, afegeix el pebrot verd i el tomàquet ratllat."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Cuina a foc mitjà durant uns 10 minuts fins que el sofregit estigui ben fet."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegeix les espècies (canyella, pebre vermell, pebre negre, nou moscada, llorer i safrà). Remena bé perquè alliberin el seu aroma."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Incorpora els bolets i cuina durant 2-3 minuts."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegeix l’arròs i barreja bé amb els altres ingredients perquè agafi sabor."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegeix el brou ben calent. Remena i deixa coure a foc mitjà durant 18-20 minuts."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Als 10 minuts de cocció, afegeix el botifarró a rodanxes."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Corregeix de sal si cal. L’arròs ha de quedar melós i amb brou abundant."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Deixa reposar 2-3 minuts i serveix l'arròs ben calent."
+                    }
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/watch?v=_N-quqPKzbM"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "450 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": "octubre",
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Es Cruce",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carretera de Palma, 0, 07250",
+                        "addressLocality": "Villafranca de Bonany",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.7196586,
+                        "longitude":2.8648221
+                    }
+                }
+            },
+            "recipe-8":{
+                "@type": "Recipe",
+                "name": "Ensaïmada",
+                "image": "assets/img/menu/ensaimada.webp",
+                "description": " L’ensaïmada mallorquina és un dolç tradicional, ideal per esmorzars i berenars.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2024-03-15",
+                "recipeCategory": "postres",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT1H20M",
+                "recipeYield": "4 persones",
+                "recipeIngredient": [
+                    "500g de farina de força",
+                    "100g de sucre",
+                    "10g de sal",
+                    "200g de llevat fresc",
+                    "200ml d'aigua tèbia",
+                    "150g de saïm",
+                    "2 ous",
+                    "Sucre glacé"  
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "En un bol gran, barreja la farina amb el sucre i la sal."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Dissol el llevat en l’aigua tèbia i afegeix-ho al bol."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegeix els ous i amassa fins a obtenir una massa homogènia i elàstica ."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Cobreix la massa amb un drap i deixa-la reposar 30 minuts."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Passat el repòs, estén la massa sobre una superfície enfarinada."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Amb un corró, estira-la fins que quedi molt fina."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Unta tota la superfície amb el saïm"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Enrotlla la massa fent un cilindre llarg. Forma una espiral deixant espai entre les voltes"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Col·loca l’ensaïmada en una safata amb paper de forn."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Deixa-la reposar a temperatura ambient entre 12 i 24 hores"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Preescalfa el forn a 180 °C"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Enforna l’ensaïmada uns 12-15 minuts, fins que estigui daurada."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Deixa-la refredar i empolvora sucre glacé per sobre."
+                    }
+                    
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/watch?v=bE1BUMSqD-A"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "350 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": null,
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Ca'n Joan de S'Aigo",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer del Baró de Santa Maria del Sepulcre,5 07012",
+                        "addressLocality": "Palma",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.7196586,
+                        "longitude":2.8648221
+                    }
+                }
+            },
+            "recipe-9":{
+                "@type": "Recipe",
+                "name": "Gató",
+                "image": "assets/img/menu/gato-ametlla.webp",
+                "description": "El gató mallorquí és un pastís esponjós i aromàtic fet amb ametlla, perfecte per acompanyar amb gelat",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2024-03-15",
+                "recipeCategory": "postres",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT1H15M",
+                "recipeYield": "4 persones",
+                "recipeIngredient": [
+                    "250g d'amatella molta'",
+                    "200g de sucre",
+                    "Ratlladura de llimona",
+                    "200ml d'aigua tèbia",
+                    "1 cullarada de canyella",
+                    "6 ous",
+                    "Sucre glacé"  
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "Separa els rovells de les clares en dos bols diferents."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Bat els rovells amb el sucre fins que blanquegin i augmentin de volum."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegeix-hi la ratlladura de llimona i la canyella."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Incorpora l’ametlla molta i barreja suaument."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Bat les clares a punt de neu fins que quedin fermes."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegeix-les a la barreja anterior, amb moviments suaus i envoltants per mantenir l’aire."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Preescalfa el forn a 180 °C."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Unta un motlle amb mantega i aboca-hi la massa."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Forneja durant 30-40 minuts, fins que estigui daurat i al punxar-lo amb un escuradents surti net."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Deixa'l refredar i empolvora sucre glacé per sobre."
+                    }
+                
+                    
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/watch?v=PySxyhF3dC0"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "500 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": "agost",
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Ca'n Joan de S'Aigo",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer del Baró de Santa Maria del Sepulcre, 5 07012",
+                        "addressLocality": "Palma",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.7196586,
+                        "longitude":2.8648221
+                    }
+                }
+            },
+            "recipe-10": {
+                "@type": "Recipe",
+                "name": "Frit de Pasqua",
+                "image": "assets/img/menu/frit-pasqua.webp",
+                "description": "El Frit de Pasqua és un plat tradicional de la gastronomia balear que es consumeix especialment durant Setmana Santa. Aquesta recepta combina carn de be amb verdures fresques, donant lloc a un plat saborós i típicament mediterrani.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2025-04-01",
+                "recipeCategory": "principals",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT1H",
+                "recipeYield": "4 persones",
+                "recipeIngredient": [
+                    "Freixura de xot (fetge, pulmó, cor i sang)",
+                    "3 patates grosses",
+                    "2 pebrots vermells",
+                    "300 g de coliflor",
+                    "150 g de pèsols",
+                    "1 manat de cebes tendres",
+                    "Fonoll fresc",
+                    "6 grans d'all",
+                    "3 fulles de llorer",
+                    "Oli d'oliva",
+                    "Sal",
+                    "Pebre negre"
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "Tallau tots els ingredients en daus."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "En una paella amb abundant oli, anirem fregint tots els ingredients per tandes."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Primer les patates, després els pebrots, la coliflor i finalment la freixura de xot."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "A mesura que anem fregint els ingredients els reservam en una greixonera."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Per últim, fregim en la paella els alls, prèviament matxucats, i la ceba tendra."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Una vegada sofregits afegim el fonoll, el llorer, els pèsols i la sang."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Finalment ho mesclam tot en la greixonera i posam un poc més de fonoll per sobre."
+                    }
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/watch?v=pe6chyYiOI8&ab_channel=RecetasMallorquinas"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "400 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": "abril",
+                "subjectOf": [
+                    {
+                        "@type": "Restaurant",
+                        "name": "Ca na Toneta",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Carrer Major, 12",
+                            "addressLocality": "Palma",
+                            "addressRegion": "Illes Balears"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 39.6953,
+                            "longitude": 3.0176
+                        }
+                    },
+                    {
+                        "@type": "Restaurant",
+                        "name": "Celler Sa Plaça",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Carrer Esglèsia, 16",
+                            "addressLocality": "Lloseta",
+                            "addressRegion": "Illes Balears"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 39.7196586,
+                            "longitude": 2.8648221
+                        }
+                    }
+                ]
+            },
+            "recipe-11": {
+                "@type": "Recipe",
+                "name": "Herbes Dolces",
+                "image": "assets/img/menu/herbes-dolces.webp",
+                "description": "Les Herbes Dolces són un licor tradicional de les Illes Balears, elaborat amb una combinació d’herbes aromàtiques macerades en anís dolç. És una beguda típica de les celebracions i àpats festius.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2025-04-01",
+                "recipeCategory": "begudes",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT10D",
+                "recipeYield": "1 litre",
+                "recipeIngredient": [
+                    "1 litre d’anís dolç",
+                    "1 branca de romaní",
+                    "1 branca de farigola",
+                    "1 branca de fonoll",
+                    "Fulles de tarongina",
+                    "Fulles de menta",
+                    "Fulles de marialluïsa",
+                    "Pell de llimona",
+                    "Pell de taronja"
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "Rentau bé les herbes aromàtiques i deixeu-les assecar."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Introduïu totes les herbes i les pells de cítrics dins una ampolla gran de vidre."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Afegiu l’anís dolç i tapau l’ampolla hermèticament."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Deixau macerar durant 10 dies en un lloc fosc i fresc, remenant suaument cada dia."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Passats els 10 dies, colau el líquid i traspassau-lo a una ampolla neta per conservar-lo."
+                    }
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/embed/example"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "250 kcal",
+                    "servingSize": "100 ml"
+                },
+                "temporal": null,
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Ca na Toneta",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer Major, 12",
+                        "addressLocality": "Palma",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.6953,
+                        "longitude": 3.0176
+                    }
+                }
+            },
+            "recipe-12": {
+                "@type": "Recipe",
+                "name": "Coca de verdures",
+                "image": "assets/img/menu/coca-de-verdures.webp",
+                "description": "La coca de verdures és una recepta tradicional mallorquina elaborada amb massa casolana i verdures fresques de temporada com bledes, cebes tendres i tomàtigues.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "BonMenjar"
+                },
+                "datePublished": "2024-05-01",
+                "recipeCategory": "entrant",
+                "recipeCuisine": "Balear",
+                "totalTime": "PT1H15M",
+                "recipeYield": "6 persones",
+                "recipeIngredient": [
+                    "185 g de mantega de porc",
+                    "185 ml d'oli",
+                    "250 ml d'aigua tèbia",
+                    "Farina (la que admeti)",
+                    "1 pessic de sal",
+                    "1 manat de bledes",
+                    "1 manat de cebes tendres",
+                    "1 manat de julivert",
+                    "3 o 4 tomàtigues",
+                    "2 arengades",
+                    "Alls",
+                    "Pebre vermell dolç",
+                    "Oli d'oliva",
+                    "Sal"
+                ],
+                "recipeInstructions": [
+                    {
+                        "@type": "HowToStep",
+                        "text": "Prepara la massa: en un bol gran posa l’oli, l’aigua tèbia, la mantega i una mica de sal. Afegeix farina poc a poc mentre amasses amb la mà fins que la massa es despegui dels dits però encara sigui un poc enganxosa."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Estira la massa amb les mans damunt una safata de forn i forma els vorals amb una forqueta."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Talla les bledes i posa-les dins un bol amb un poc de sal. Afegeix les cebes tendres tallades, el julivert picat i alls picats. Amaneix-ho amb oli d’oliva, sal i pebre vermell."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Posa una capa del farcit damunt la massa, col·loca-hi les arengades trossejades, i acaba d’afegir la resta del farcit."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Col·loca per damunt les rodanxes de tomàtiga i enforna-ho a 180 ºC durant uns 35 minuts."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "text": "Deixa refredar una mica abans de servir."
+                    }
+                ],
+                "video": {
+                    "@type": "VideoObject",
+                    "contentUrl": "https://www.youtube.com/embed/IRdMi2L_PpY"
+                },
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": "350 kcal",
+                    "servingSize": "1 porció"
+                },
+                "temporal": "maig",
+                "subjectOf": {
+                    "@type": "Restaurant",
+                    "name": "Celler Sa Plaça",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer Església, 16",
+                        "addressLocality": "Lloseta",
+                        "addressRegion": "Illes Balears"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 39.7196586,
+                        "longitude": 2.8648221
+                    }
+                }
+            }
+        }
+    ]
+}
