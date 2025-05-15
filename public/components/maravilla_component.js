@@ -137,16 +137,18 @@ async function createMaravillaContainer(maravilla) {
                                         <div class="active-works-carousel">
                                                 ${images
                                                         .map(
-                                                                (img, i) => `
-                                                        <div class="item">
+                                                                (img, i) => `                                                <div class="item">
                                                                 <img
                                                                         class="img-fluid rounded shadow-sm"
                                                                         src="${img}"
                                                                         alt="${name} - Imagen ${i + 1}"
+                                                                        loading="lazy"
+                                                                        width="800"
+                                                                        height="600"
                                                                 />
                                                                 <div class="caption text-center mt-3">
                                                                         <h6 class="text-uppercase">
-                                                                                <i class="fas fa-image me-1"></i>Foto ${i + 1}
+                                                                                <i class="fas fa-image me-1" aria-hidden="true"></i>Foto ${i + 1}
                                                                         </h6>
                                                                         <p class="small">Imagen ${i + 1} de ${name}</p>
                                                                 </div>
@@ -352,13 +354,12 @@ async function createMaravillaContainer(maravilla) {
                                                 lat: maravilla.geo.latitude,
                                                 lon: maravilla.geo.longitude
                                         })}
-                                </div>
-                                <div class="col-lg-8">
+                                </div>                                <div class="col-lg-8">
                                         ${renderInfoSection(maravilla)}
                                         ${renderScheduleSection(maravilla.openingHoursSpecification)}
-                                        <div id="map" style="width:100%; height:400px;" class="card border-0 shadow-sm">
+                                        <div class="card border-0 shadow-sm lazy-load-map">
                                                 <div class="card-body p-0">
-                                                        <div id="map" class="rounded" style="width:100%;height:400px;"></div>
+                                                        <div class="map-container rounded" style="width:100%;height:400px;" data-lat="${maravilla.geo.latitude}" data-lon="${maravilla.geo.longitude}" data-name="${maravilla.name}"></div>
                                                 </div>
                                         </div>
                                 </div>
@@ -373,15 +374,17 @@ async function createMaravillaContainer(maravilla) {
         // Obtenemos el contenedor estrellas
         const contenedorEstrellas = container.querySelector("#estrellas");
         // Creamos las estrellas y las añadimos al contenedor
-        mostrarEstrellas(maravilla.aggregateRating.ratingValue, contenedorEstrellas);
+        mostrarEstrellas(maravilla.aggregateRating.ratingValue, contenedorEstrellas);        // La carga del mapa ahora se maneja mediante lazy-loading
+        // El mapa se cargará cuando el usuario lo vea en pantalla
 
-        await crearMapa(
-                container.querySelector("#map"),
-                maravilla.geo.latitude,
-                maravilla.geo.longitude,
-                maravilla.name,
-                true,
-        );
+        // Respaldo: Si el lazy loading falla, intentamos cargar el mapa directamente después de un tiempo
+        setTimeout(() => {
+            const mapContainer = container.querySelector('.map-container');
+            if (mapContainer && !mapContainer.hasChildNodes()) {
+                // Si el contenedor del mapa está vacío después de un tiempo, cargamos el mapa directamente
+                crearMapa(mapContainer, maravilla.geo.latitude, maravilla.geo.longitude, maravilla.name, true);
+            }
+        }, 2000);
 
         // Obtenemos el contenedor de lector
         const lectorContainer = container.querySelector("#lector-container");

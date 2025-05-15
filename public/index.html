@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="es" class="no-js">
 
 <head>
   <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Favicon-->
-  <link rel="shortcut icon" href="/public/mallorca.svg" />
+  <link rel="shortcut icon" href="/mallorca.svg" />
   <!-- Author Meta -->
-  <meta name="author" content="7Maravillas" />
-  <!-- Meta Description -->
-  <meta name="description" content="" />
+  <meta name="author" content="7Maravillas" />  <!-- Meta Description -->
+  <meta name="description" content="Descubre las 7 maravillas de Mallorca: Castillo de Bellver, Sa Calobra, Sa Foradada, La Catedral, Coves del Drach, Santuario de Cura. Una guía turística interactiva." />
   <!-- Meta Keyword -->
-  <meta name="keywords" content="" />
-  <!-- meta character set -->
+  <meta name="keywords" content="mallorca, turismo mallorca, 7 maravillas, castillo bellver, sa calobra, sa foradada, catedral palma, coves drach, santuario cura, baleares, islas baleares" /><!-- meta character set -->
   <meta charset="UTF-8" />
   <!-- Site Title -->
   <title>7 Maravillas de Mallorca</title>
+  <!-- PWA Support -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#007bff">  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="7Mallorca">
+  <link rel="apple-touch-icon" href="/mallorca.svg" type="image/svg+xml">
+  <!-- Agregar un favicon para dispositivos iOS -->
+  <link rel="icon" type="image/svg+xml" href="/mallorca.svg">
   <!-- CSS Propio -->
   <!-- <link rel="stylesheet" href="/css/searchbar.css" /> -->
   <!-- JS Propios -->
-  <script src="/libs/maravillas_api.js"></script>
-  <script src="/libs/lector_api.js"></script>
-  <script src="/libs/geo_api.js"></script>
-  <script src="/libs/forecast_api.js"></script>
-  <script src="/components/maravilla_component.js"></script>
-  <script src="/components/estrellas_component.js"></script>
-  <script src="/components/lector_component.js"></script>
+  <script defer src="/libs/maravillas_api.js"></script>
+  <script defer src="/libs/lector_api.js"></script>
+  <script defer src="/libs/geo_api.js"></script>
+  <script defer src="/libs/forecast_api.js"></script>
+  <script defer src="/components/maravilla_component.js"></script>
+  <script defer src="/components/estrellas_component.js"></script>
+  <script defer src="/components/lector_component.js"></script>
   <!-- Librerias externas -->
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -34,10 +40,10 @@
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
-  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+  <script defer src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
   <!-- JS files -->
   <script>function initializeOwlCarousel() {
       // Destruir cualquier instancia anterior de Owl Carousel en el contenedor
@@ -56,17 +62,43 @@
     }
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet" />
-  <!--
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet" />  <!--
 			CSS
 			============================================= -->
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/css/bootstrap.css" as="style" />
+  <link rel="preload" href="/css/main.css" as="style" />
+  <link rel="preload" href="/fonts/fontawesome-webfont.woff2" as="font" type="font/woff2" crossorigin />
+			
   <link rel="stylesheet" href="/css/linearicons.css" />
-  <link rel="stylesheet" href="/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/css/bootstrap.css" />
   <link rel="stylesheet" href="/css/magnific-popup.css" />
-  <!-- <link rel="stylesheet" href="css/animate.min.css" /> -->
-  <link rel="stylesheet" href="/css/owl.carousel.css" />
+  <!-- <link rel="stylesheet" href="css/animate.min.css" /> -->  <link rel="stylesheet" href="/css/owl.carousel.css" />
   <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/accessibility.css" />
+  <style>
+    /* Fix for layout shifts */
+    .item-slider {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    /* Ensure search bar doesn't shift layout */
+    .search-bar-container {
+      min-height: 80px;
+    }
+    
+    /* Prevent CLS for image loading */
+    img {
+      display: block;
+    }
+    
+    /* Make sure areas reserved for content don't collapse */
+    .section-gap {
+      min-height: 200px;
+    }
+  </style>
 </head>
 
 <body>
@@ -74,17 +106,15 @@
   <section class="banner-area" id="home">
     <!-- Start Header Area -->
     <header class="default-header">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">
-            <svg height="40" width="40">
+      <nav class="navbar navbar-expand-lg navbar-light">        <div class="container">          <a class="navbar-brand" href="index.html">
+            <svg height="40" width="40" role="img" aria-labelledby="logo-title">
+              <title id="logo-title">Logo de 7 Maravillas de Mallorca</title>
               <image height="40" width="40" href="/mallorca.svg" />
             </svg>
-            <h1 class="logo-text">7 Maravillas de Mallorca</h2>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="text-white lnr lnr-menu"></span>
+            <h1 class="logo-text">7 Maravillas de Mallorca</h1>
+          </a>          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Desplegar menú de navegación">
+            <span class="text-white lnr lnr-menu" aria-hidden="true"></span>
           </button>
 
           <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
@@ -100,12 +130,12 @@
     <!-- End Header Area -->
   </section>
   <section class="slider-wrapper">
-    <!-- Search bar with autocomplete -->
-    <div class="search-bar-container">
+    <!-- Search bar with autocomplete -->    <div class="search-bar-container">
       <div class="search-bar center">
-        <input type="text" id="maravillas-input" class="search-input" list="maravillas-list" placeholder="Buscar..." />
-        <button class="search-button">
-          <i class="fa fa-search"></i>
+        <label for="maravillas-input" class="sr-only">Buscar maravillas</label>
+        <input type="text" id="maravillas-input" class="search-input" list="maravillas-list" placeholder="Buscar maravillas..." aria-label="Buscar maravillas" />
+        <button class="search-button" aria-label="Buscar">
+          <i class="fa fa-search" aria-hidden="true"></i>
         </button>
         <script>
           document.getElementById('maravillas-input').addEventListener('keyup', function (e) {
@@ -173,10 +203,9 @@
         }
       });
 
-    </script>
-
-    <section class="default-banner active-blog-slider">
-      <div class="item-slider relative" style="background: url(/castilloBellver/bellver1.webp); background-size: cover">
+    </script>    <section class="default-banner active-blog-slider">
+      <div class="item-slider relative">
+        <img src="/castilloBellver/bellver1.webp" width="1920" height="1080" alt="Castillo de Bellver" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" fetchpriority="high" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -192,7 +221,8 @@
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(/saCalobra/calobra1.webp); background-size: cover">
+      <div class="item-slider relative">
+        <img src="/saCalobra/calobra1.webp" width="1920" height="1080" alt="Sa Calobra" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -207,8 +237,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="item-slider relative" style="background: url(/saForadada/foradada1.webp); background-size: cover">
+      </div>      <div class="item-slider relative">
+        <img src="/saForadada/foradada1.webp" width="1920" height="1080" alt="Sa Foradada" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -224,7 +254,8 @@
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(/catedralPalma/catedral1.webp); background-size: cover">
+      <div class="item-slider relative">
+        <img src="/catedralPalma/catedral1.webp" width="1920" height="1080" alt="La Catedral" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -238,8 +269,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="item-slider relative" style="background: url(/covesDrach/drach1.webp); background-size: cover">
+      </div>      <div class="item-slider relative">
+        <img src="/covesDrach/drach1.webp" width="1920" height="1080" alt="Coves del Drach" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -255,7 +286,8 @@
           </div>
         </div>
       </div>
-      <div class="item-slider relative" style="background: url(/santuarioCura/cura1.webp); background-size: cover">
+      <div class="item-slider relative">
+        <img src="/santuarioCura/cura1.webp" width="1920" height="1080" alt="Santuario de Cura" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -452,11 +484,22 @@
         let divContenedor = document.createElement("div");
         divContenedor.className = "owl-item active";
         divFotoCarrousel.className = "item single-gallery";
-        // divFotoCarrousel.className = "item single-gallery";
-
-        let img = document.createElement("img");
+        // divFotoCarrousel.className = "item single-gallery";        let img = document.createElement("img");
         img.src = imagenUrl;
-        img.alt = "Imagen";
+        
+        // Extract name from URL for better alt text
+        const maravillaName = imagenUrl.split('/').slice(-2)[0];
+        img.alt = "Imagen de " + maravillaName;
+        
+        // Add width and height to prevent layout shifts
+        img.width = 800;
+        img.height = 600;
+        img.loading = "lazy";
+        
+        // Add style to ensure proper display while maintaining aspect ratio
+        img.style.objectFit = "cover";
+        img.style.width = "100%";
+        img.style.height = "100%";
 
         divFotoCarrousel.appendChild(img);
         divContenedor.appendChild(divFotoCarrousel);
@@ -475,14 +518,12 @@
   <!-- Start Video Area -->
   <section class="video-area pt-40 pb-40">
     <div class="overlay overlay-bg"></div>
-    <div class="container">
-      <div class="video-content">
-        <a href="https://www.youtube.com/watch?v=s_vnbWgnSSs" class="play-btn"><img src="img/play-btn.webp" alt="video de la maravilla seleccionada" loading="lazy" /></a>
-        <div class="video-desc">
-          <h3 class="h2 text-white text-uppercase">
+    <div class="container">      <div class="video-content">
+        <a href="https://www.youtube.com/watch?v=s_vnbWgnSSs" class="play-btn" aria-label="Ver video sobre Mallorca"><img src="img/play-btn.webp" alt="Botón de reproducción" width="72" height="72" loading="lazy" /></a>        <div class="video-desc">
+          <h2 class="text-white text-uppercase">
             Mallorca, tierra de maravillas
-          </h3>
-          <h4 class="text-white">Haz click para descubrir mallorca</h4>
+          </h2>
+          <h3 class="text-white">Haz click para descubrir Mallorca</h3>
         </div>
       </div>
     </div>
@@ -500,19 +541,17 @@
           </div>
         </div>
       </div>
-      <div class="single-info row mt-40">
-        <div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left">
+      <div class="single-info row mt-40">        <div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left">
           <div class="info-thumb">
-            <img src="/us.webp" class="img-fluid" alt="" loading="lazy" />
+            <img src="/us.webp" class="img-fluid" alt="Foto del equipo de 7 Maravillas de Mallorca" width="600" height="400" loading="lazy" />
           </div>
         </div>
-        <div class="col-lg-6 col-md-12 no-padding info-rigth">
-          <div class="info-content">
-            <h2 class="pb-30">
+        <div class="col-lg-6 col-md-12 no-padding info-rigth">          <div class="info-content">
+            <h3 class="pb-30">
               Por qué las <br />
               7 maravillas de <br />
               Mallorca?
-            </h2>
+            </h3>
             <p>
               Decidimos centrarnos en las 7 maravillas de Mallorca porque creemos que la isla tiene una riqueza natural y cultural que merece ser compartida con el mundo. Al destacar estos lugares emblemáticos, 
               buscamos no solo atraer a los turistas, sino también educar a los residentes y visitantes sobre la historia, la arquitectura y el patrimonio que hacen de Mallorca un destino único.
@@ -550,32 +589,35 @@
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="menu-content pb-60 col-lg-8">
-          <div class="title text-center">
-            <h1 class="mb-10">Contáctanos</h1>
-            <p>¡Déjanos un mensaje para cualquier duda o sugerencia!</p>
-          </div>
+           <div class="title text-center" style="color: black;">
+                <h1 class="mb-10">Contáctanos</h1>
+                <p>¡Déjanos un mensaje para cualquier duda o sugerencia!</p>
+                </div>
         </div>
       </div>
       <!-- Reemplaza el formulario de contacto por el siguiente código -->
 <form class="form-area" id="myForm" action="php/contacto.php" method="post" class="contact-form text-right">
   <div class="row">
     <div class="col-lg-6 form-group">
-      <input name="nombre" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'"
-        class="common-input mb-20 form-control" required type="text" />
+      <label for="nombre" class="sr-only">Nombre</label>
+      <input id="nombre" name="nombre" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'"
+        class="common-input mb-20 form-control" required type="text" aria-required="true" />
 
-      <input name="email" placeholder="Correo electrónico"
+      <label for="email" class="sr-only">Correo electrónico</label>
+      <input id="email" name="email" placeholder="Correo electrónico"
         pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''"
-        onblur="this.placeholder = 'Correo electrónico'" class="common-input mb-20 form-control" required type="email" />
+        onblur="this.placeholder = 'Correo electrónico'" class="common-input mb-20 form-control" required type="email" aria-required="true" />
 
       <!-- Campo subject eliminado ya que no se utiliza en contacto.php -->
     </div>
     <div class="col-lg-6 form-group">
-      <textarea class="common-textarea mt-10 form-control" name="mensaje" placeholder="Mensaje"
-        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensaje'" required></textarea>
+      <label for="mensaje" class="sr-only">Mensaje</label>
+      <textarea id="mensaje" class="common-textarea mt-10 form-control" name="mensaje" placeholder="Mensaje"
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensaje'" required aria-required="true"></textarea>
       <button class="primary-btn mt-20" type="submit">
-        Enviar mensaje<span class="lnr lnr-arrow-right"></span>
+        Enviar mensaje<span class="lnr lnr-arrow-right" aria-hidden="true"></span>
       </button>
-      <div class="alert-msg"></div>
+      <div class="alert-msg" role="alert"></div>
     </div>
   </div>
 </form>
@@ -621,7 +663,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-md-6 col-sm-6">
-          <div class="single-footer-widget">
+          <div class="single-footer-widget" style="color: white;">
             <h6>About Us</h6>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -646,15 +688,16 @@
             <p>Stay update with our latest</p>
             <div class="" id="mc_embed_signup">
               <form id="newsletterForm" action="php/newsletter.php" method="post" class="form-inline">
-                <div class="d-flex flex-row"></div>
-                  <input class="form-control" name="email" placeholder="Enter Email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter Email'" required type="email" />
+                <div class="d-flex flex-row">
+                  <label for="newsletter-email" class="sr-only">Correo electrónico</label>
+                  <input id="newsletter-email" class="form-control" name="email" placeholder="Tu email" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Tu email'" required type="email" aria-required="true" />
                   
-                  <button type="submit" class="click-btn btn btn-default">
+                  <button type="submit" class="click-btn btn btn-default" aria-label="Suscribirse">
                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                   </button>
                 </div>
-                <div class="info mt-2"></div>
+                <div class="info mt-2" role="alert"></div>
               </form>
 
               <script>
@@ -694,33 +737,46 @@
         <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
           <div class="single-footer-widget">
             <h6>Follow Us</h6>
-            <p>Let us be social</p>
-            <div class="footer-social d-flex align-items-center">
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-dribbble"></i></a>
-              <a href="#"><i class="fa fa-behance"></i></a>
+            <p>Let us be social</p>            <div class="footer-social d-flex align-items-center">
+              <a href="#" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </footer>
-  <!-- End footer Area -->
-
+  <!-- End footer Area -->  <script src="js/preload.js" defer></script>
+  <script src="js/lazy-load.js" defer></script>
   <script src="js/vendor/jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
     integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
     crossorigin="anonymous"></script>
-  <script src="js/vendor/bootstrap.min.js"></script>
-  <script src="js/jquery.ajaxchimp.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js" defer></script>
+  <script src="js/jquery.ajaxchimp.min.js" defer></script>
+  <script src="js/jquery.magnific-popup.min.js" defer></script>
   <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.sticky.js"></script>
-  <script src="js/slick.js"></script>
-  <script src="js/jquery.counterup.min.js"></script>
-  <script src="js/waypoints.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/jquery.sticky.js" defer></script>
+  <script src="js/slick.js" defer></script>
+  <script src="js/jquery.counterup.min.js" defer></script>
+  <script src="js/waypoints.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script>
+    // Registrar Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(registration) {
+            console.log('Service Worker registrado con éxito:', registration.scope);
+          })
+          .catch(function(error) {
+            console.log('Error al registrar Service Worker:', error);
+          });
+      });
+    }
+  </script>
 </body>
 
 </html>
