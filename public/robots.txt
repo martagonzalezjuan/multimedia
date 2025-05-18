@@ -1,0 +1,5 @@
+# 7 Maravillas de Mallorca robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://7maravillasdemallorca.com/sitemap.xml
