@@ -340,34 +340,62 @@ async function createMaravillaContainer(maravilla) {
                 `;
         }
 
-        // ---- reemplaza tu $SELECTION_PLACEHOLDER$ por esto ----
-        const html = `
-                <div class="container my-5">
-                        ${renderHeader(maravilla)}
-                        ${renderCarousel(maravilla.image, maravilla.name)}
+                // ---- reemplaza tu $SELECTION_PLACEHOLDER$ por esto ----
+                const jsonLd = JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "TouristAttraction",
+                        "name": maravilla.name,
+                        "description": maravilla.description,
+                        "image": maravilla.image,
+                        "geo": {
+                                "@type": "GeoCoordinates",
+                                "latitude": maravilla.geo.latitude,
+                                "longitude": maravilla.geo.longitude
+                        },
+                        "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": maravilla.address.streetAddress,
+                                "addressLocality": maravilla.address.addressLocality,
+                                "postalCode": maravilla.address.postalCode,
+                                "addressCountry": "ES"
+                        },
+                        "telephone": maravilla.telephone !== 'None' ? maravilla.telephone : undefined,
+                        "url": maravilla.url,
+                        "publicAccess": maravilla.publicAccess,
+                        "isAccessibleForFree": maravilla.isAccessibleForFree,
+                        "openingHoursSpecification": maravilla.openingHoursSpecification,
+                        "aggregateRating": maravilla.aggregateRating
+                }, null, 2);
 
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        ${renderWeatherSection(prevision)}
-                                        ${renderExcursionsSection(excursionesCercanas)}
-                                        ${renderRestaurantsSection(restaurantesCercanos, {
-                                                lat: maravilla.geo.latitude,
-                                                lon: maravilla.geo.longitude
-                                        })}
-                                </div>                                <div class="col-lg-8">
-                                        ${renderInfoSection(maravilla)}
-                                        ${renderScheduleSection(maravilla.openingHoursSpecification)}
-                                        <div class="card border-0 shadow-sm lazy-load-map">
-                                                <div class="card-body p-0">
-                                                        <div class="map-container rounded" style="width:100%;height:400px;" data-lat="${maravilla.geo.latitude}" data-lon="${maravilla.geo.longitude}" data-name="${maravilla.name}"></div>
+                const html = `
+                        <div class="container my-5">
+                                ${renderHeader(maravilla)}
+                                ${renderCarousel(maravilla.image, maravilla.name)}
+                                <script type="application/ld+json">
+                                        ${jsonLd}
+                                </script>
+                                <div class="row">
+                                        <div class="col-lg-4">
+                                                ${renderWeatherSection(prevision)}
+                                                ${renderExcursionsSection(excursionesCercanas)}
+                                                ${renderRestaurantsSection(restaurantesCercanos, {
+                                                        lat: maravilla.geo.latitude,
+                                                        lon: maravilla.geo.longitude
+                                                })}
+                                        </div>                                <div class="col-lg-8">
+                                                ${renderInfoSection(maravilla)}
+                                                ${renderScheduleSection(maravilla.openingHoursSpecification)}
+                                                <div class="card border-0 shadow-sm lazy-load-map">
+                                                        <div class="card-body p-0">
+                                                                <div class="map-container rounded" style="width:100%;height:400px;" data-lat="${maravilla.geo.latitude}" data-lon="${maravilla.geo.longitude}" data-name="${maravilla.name}"></div>
+                                                        </div>
                                                 </div>
                                         </div>
                                 </div>
                         </div>
-                </div>
-        `;
+                `;
 
-        container.innerHTML = html;
+                container.innerHTML = html;
 
         
 
