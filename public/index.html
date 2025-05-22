@@ -32,6 +32,8 @@
   <script defer src="/components/maravilla_component.js"></script>
   <script defer src="/components/estrellas_component.js"></script>
   <script defer src="/components/lector_component.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <!-- Librerias externas -->
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -203,7 +205,8 @@
         }
       });
 
-    </script>    <section class="default-banner active-blog-slider">
+    </script>    
+    <section class="default-banner active-blog-slider">
       <div class="item-slider relative">
         <img src="/castilloBellver/bellver1.webp" width="1920" height="1080" alt="Castillo de Bellver" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" fetchpriority="high" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
@@ -525,26 +528,15 @@
   <!-- End gallery Area -->
 
   <!-- Start Video Area -->
-   <script>
-  function crearVideoMaravilla(maravilla) {
-    const videoArea = document.querySelector('.video-area');
 
-    // Set background image
-    videoArea.style.backgroundImage = `url(${maravilla.image[0]})`;
-
-    // Set video link or fallback
-    const videoLink = maravilla.linkVideo || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Default video link
-    videoArea.querySelector('.video-content a').href = videoLink;
-
-    // Set video description
-    videoArea.querySelector('.video-desc h3').textContent = maravilla.name;
-    videoArea.querySelector('.video-desc h4').textContent = `Haz click para descubrir ${maravilla.name}`;
-  }
-</script>
-  <section class="video-area pt-40 pb-40">
+  <section class="video-area pt-40 pb-40" >
     <div class="overlay overlay-bg"></div>
-    <div class="container">      <div class="video-content">
-        <a href="https://www.youtube.com/watch?v=s_vnbWgnSSs" class="play-btn" aria-label="Ver video sobre Mallorca"><img src="img/play-btn.webp" alt="Botón de reproducción" width="72" height="72" loading="lazy" /></a>        <div class="video-desc">
+    <div class="container">
+      <div class="video-content">
+        <a href="https://www.youtube.com/watch?v=s_vnbWgnSSs" class="play-btn" aria-label="Ver video sobre Mallorca">
+          <img src="img/play-btn.webp" alt="Botón de reproducción" width="72" height="72" loading="lazy" />
+        </a>
+        <div class="video-desc">
           <h2 class="text-white text-uppercase">
             Mallorca, tierra de maravillas
           </h2>
@@ -552,6 +544,35 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function crearVideoMaravilla(maravilla) {
+        const videoArea = document.querySelector('.video-area');
+
+        // Create a temporary image to lazy load the background
+        const tempImage = new Image();
+        tempImage.src = maravilla.image[0];
+        tempImage.loading = 'lazy';
+
+        tempImage.onload = () => {
+          // Set background image once the image is loaded
+          videoArea.style.backgroundImage = `url(${tempImage.src})`;
+        };
+
+        // Set video link or fallback
+        const videoLink = maravilla.linkVideo || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Default video link
+
+        // Ensure video area is loaded before setting attributes
+        const videoContentLink = videoArea.querySelector('.video-content a');
+        if (videoContentLink) {
+          videoContentLink.href = videoLink;
+        }
+
+        // Set video description
+        videoArea.querySelector('.video-desc h3').textContent = maravilla.name;
+        videoArea.querySelector('.video-desc h4').textContent = `Haz click para descubrir ${maravilla.name}`;
+      }
+    </script>
   </section>
 
   <!-- Start Video Area -->
