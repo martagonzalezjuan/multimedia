@@ -99,85 +99,30 @@
     </header>
     <!-- End Header Area -->
   </section>
+  <!-- Start slider wrapper -->
   <section class="slider-wrapper">
-    <!-- Search bar with autocomplete -->
+    <!-- Search bar container with better positioning -->
     <div class="search-bar-container">
       <div class="search-bar">
         <input type="text" id="maravillas-input" class="search-input" list="maravillas-list" placeholder="Buscar..." />
         <button class="search-button">
           <i class="fa fa-search"></i>
         </button>
-        <script>
-          document.getElementById('maravillas-input').addEventListener('keyup', function (e) {
-            if (e.key === 'Enter') {
-              e.preventDefault();
-              document.querySelector('.search-button').click();
-            }
-          });
-        </script>
-        
       </div>
       
       <div id="search_buttons">
         <button class="genric-btn" id="random-button">Aleatorio</button>
         <button class="genric-btn" id="nearby-button">Cercano</button>
       </div>
+      
       <div id="suggestions" class="suggestions-container"></div>
     </div>
-    <script>
 
-      
-
-      document.addEventListener('DOMContentLoaded', async function () {
-        const searchInput = document.getElementById('maravillas-input');
-        const suggestionsContainer = document.getElementById('suggestions');
-
-        try {
-          const maravillas = await getMaravillas(); // usando maravillas_api.js
-          searchInput.addEventListener('input', function (e) {
-            const value = e.target.value.toLowerCase();
-            suggestionsContainer.innerHTML = '';
-
-            if (value.length > 0) {
-              const filteredMaravillas = maravillas.filter(maravilla =>
-                maravilla.name.toLowerCase().includes(value)
-              );
-
-              if (filteredMaravillas.length > 0) {
-                suggestionsContainer.style.display = 'block';
-                filteredMaravillas.forEach(maravilla => {
-                  const div = document.createElement('div');
-                  div.className = 'suggestion-item';
-                  div.textContent = maravilla.name;
-                  div.addEventListener('click', () => {
-                    searchInput.value = maravilla.name;
-                    suggestionsContainer.style.display = 'none';
-                  });
-                  suggestionsContainer.appendChild(div);
-                });
-              } else {
-                suggestionsContainer.style.display = 'none';
-              }
-            } else {
-              suggestionsContainer.style.display = 'none';
-            }
-          });
-
-          document.addEventListener('click', function (e) {
-            if (!searchInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
-              suggestionsContainer.style.display = 'none';
-            }
-          });
-        } catch (error) {
-          console.error("Error cargando las maravillas:", error);
-        }
-      });
-
-    </script>
-
+    <!-- Image slider section -->
     <section class="default-banner active-blog-slider">
+      <!-- Castillo de Bellver -->
       <div class="item-slider relative" style="background: url(/castilloBellver/bellver1.webp); background-size: cover">
-        <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
+        <div class="overlay" style="background: rgba(0, 0, 0, 0.5)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
             <div class="col-md-10 col-12">
@@ -186,14 +131,15 @@
                   Descubre las maravillas de Mallorca
                 </h4>
                 <h1 class="text-uppercase text-white">Castillo de Bellver</h1>
-                <!-- <p class="text-white">texto opcional</p> -->
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Sa Calobra -->
       <div class="item-slider relative" style="background: url(/saCalobra/calobra1.webp); background-size: cover">
-        <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
+        <div class="overlay" style="background: rgba(0, 0, 0, 0.5)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
             <div class="col-md-10 col-12">
@@ -202,14 +148,15 @@
                   Descubre las maravillas de Mallorca
                 </h4>
                 <h1 class="text-uppercase text-white">Sa Calobra</h1>
-                <!-- <p class="text-white">texto opcional</p> -->
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Sa Foradada -->
       <div class="item-slider relative" style="background: url(/saForadada/foradada1.webp); background-size: cover">
-        <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
+        <div class="overlay" style="background: rgba(0, 0, 0, 0.5)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
             <div class="col-md-10 col-12">
@@ -218,14 +165,15 @@
                   Descubre las maravillas de Mallorca
                 </h4>
                 <h1 class="text-uppercase text-white">Sa Foradada</h1>
-                <!-- <p class="text-white">texto opcional</p> -->
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- La Catedral -->
       <div class="item-slider relative" style="background: url(/catedralPalma/catedral1.webp); background-size: cover">
-        <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
+        <div class="overlay" style="background: rgba(0, 0, 0, 0.5)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
             <div class="col-md-10 col-12">
@@ -233,14 +181,16 @@
                 <h4 class="text-white mb-20 text-uppercase">
                   Descubre las maravillas de Mallorca
                 </h4>
-                <h1 class="text-uppercase text-white">La catedral</h1>
+                <h1 class="text-uppercase text-white">La Catedral</h1>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Coves del Drach -->
       <div class="item-slider relative" style="background: url(/covesDrach/drach1.webp); background-size: cover">
-        <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
+        <div class="overlay" style="background: rgba(0, 0, 0, 0.5)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
             <div class="col-md-10 col-12">
@@ -249,14 +199,15 @@
                   Descubre las maravillas de Mallorca
                 </h4>
                 <h1 class="text-uppercase text-white">Coves del Drach</h1>
-                <!-- <p class="text-white">texto opcional</p> -->
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Santuario de Cura -->
       <div class="item-slider relative" style="background: url(/santuarioCura/cura1.webp); background-size: cover">
-        <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
+        <div class="overlay" style="background: rgba(0, 0, 0, 0.5)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
             <div class="col-md-10 col-12">
@@ -265,7 +216,6 @@
                   Descubre las maravillas de Mallorca
                 </h4>
                 <h1 class="text-uppercase text-white">Santuario de Cura</h1>
-                <!-- <p class="text-white">texto opcional</p> -->
               </div>
             </div>
           </div>
@@ -273,6 +223,67 @@
       </div>
     </section>
   </section>
+
+  
+
+  <!-- JavaScript para funcionalidad del buscador -->
+  <script>
+    // Enter key functionality
+    document.getElementById('maravillas-input').addEventListener('keyup', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.querySelector('.search-button').click();
+      }
+    });
+
+    // Autocomplete functionality
+    document.addEventListener('DOMContentLoaded', async function () {
+      const searchInput = document.getElementById('maravillas-input');
+      const suggestionsContainer = document.getElementById('suggestions');
+
+      try {
+        const maravillas = await getMaravillas();
+        
+        searchInput.addEventListener('input', function (e) {
+          const value = e.target.value.toLowerCase();
+          suggestionsContainer.innerHTML = '';
+
+          if (value.length > 0) {
+            const filteredMaravillas = maravillas.filter(maravilla =>
+              maravilla.name.toLowerCase().includes(value)
+            );
+
+            if (filteredMaravillas.length > 0) {
+              suggestionsContainer.style.display = 'block';
+              filteredMaravillas.forEach(maravilla => {
+                const div = document.createElement('div');
+                div.className = 'suggestion-item';
+                div.textContent = maravilla.name;
+                div.addEventListener('click', () => {
+                  searchInput.value = maravilla.name;
+                  suggestionsContainer.style.display = 'none';
+                });
+                suggestionsContainer.appendChild(div);
+              });
+            } else {
+              suggestionsContainer.style.display = 'none';
+            }
+          } else {
+            suggestionsContainer.style.display = 'none';
+          }
+        });
+
+        // Hide suggestions when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!searchInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+            suggestionsContainer.style.display = 'none';
+          }
+        });
+      } catch (error) {
+        console.error("Error cargando las maravillas:", error);
+      }
+    });
+  </script>
 
   <!-- Start project Area -->
 

@@ -1993,7 +1993,6 @@ h6 {
   font-size: 30px;
 }
 
-
 @media (max-width: 991px) {
   .section-title p br {
     display: none;
@@ -2245,14 +2244,15 @@ h6 {
 .search-bar-container {
   position: absolute;
   top: auto;
-  bottom: 35%;
+  bottom: 25%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
   width: 50%;
   max-width: 800px;
-  display:flex;
+  display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -2286,7 +2286,7 @@ h6 {
   color: #222;
   font-weight: 400;
   cursor: pointer;
-  margin-top:30px;
+  margin-top: 30px;
   text-transform: uppercase;
   font-size: 13px;
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
@@ -2302,7 +2302,7 @@ h6 {
   position: absolute;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 0 0 20px 20px;
-  margin-top: 5px;
+  margin-top: 5em;
   max-height: 200px;
   overflow-y: auto;
   display: none;
