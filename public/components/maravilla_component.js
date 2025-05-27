@@ -143,8 +143,7 @@ async function createMaravillaContainer(maravilla) {
                                                                         src="${img}"
                                                                         alt="${name} - Imagen ${i + 1}"
                                                                         loading="lazy"
-                                                                        width="800"
-                                                                        height="600"
+                                                                        style="width: 100%; height: 400px; object-fit: cover;"
                                                                 />
                                                                 <div class="caption text-center mt-3">
                                                                         <h6 class="text-uppercase">
