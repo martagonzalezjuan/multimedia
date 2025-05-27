@@ -2205,6 +2205,16 @@ h6 {
   margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 2rem;      /* adapta según te convenga */
+    white-space: nowrap;  /* evita que salte a dos líneas mal */
+    overflow: hidden;     /* opcional si quieres que desaparezca el sobrante */
+    text-overflow: ellipsis;
+  }
+}
+
+
 .default-banner h1 span {
   text-transform: uppercase;
   font-weight: 700;

@@ -76,8 +76,8 @@
             },
             "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 39.56375,
-                "longitude": 2.6193388888889
+                "latitude": 39.56377983993916,
+                "longitude": 2.619315735149201
             },
             "publicAccess": true,
             "isAccessibleForFree": false,
@@ -121,8 +121,8 @@
             },
             "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 39.850972222222,
-                "longitude": 2.8
+                "latitude": 39.85372445248063, 
+                "longitude": 2.7987090812753257
             },
             "publicAccess": true,
             "isAccessibleForFree": true,
@@ -202,8 +202,8 @@
             },
             "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 39.5675,
-                "longitude": 2.64805556
+                "latitude": 39.56768514854436,
+                "longitude":  2.647747722922031
             },
             "publicAccess": true,
             "isAccessibleForFree": true,
@@ -292,8 +292,8 @@
             },
             "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 39.53574,
-                "longitude": 3.33062
+                "latitude": 39.53583778965538,
+                "longitude":  3.3307735701129655
             },
             "publicAccess": true,
             "isAccessibleForFree": false,
@@ -338,8 +338,8 @@
             },
             "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 39.52703333,
-                "longitude": 2.92648333
+                "latitude": 39.52744610981202, 
+                "longitude": 2.9259603584703218
             },
             "publicAccess": true,
             "isAccessibleForFree": false,
@@ -392,8 +392,8 @@
             },
             "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 39.5696,
-                "longitude": 2.6502
+                "latitude": 39.63720652068039, 
+                "longitude": 2.64468364934459
             },
             "publicAccess": true,
             "isAccessibleForFree": false,
@@ -440,8 +440,8 @@
             },
             "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 39.207083333333,
-                "longitude": 2.9784722222222
+                "latitude": 39.75668596244668, 
+                "longitude": 2.6223432621167655
             },
             "publicAccess": true,
             "isAccessibleForFree": true,
