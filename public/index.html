@@ -7,16 +7,20 @@
   <!-- Favicon-->
   <link rel="shortcut icon" href="/mallorca.svg" />
   <!-- Author Meta -->
-  <meta name="author" content="7Maravillas" />  <!-- Meta Description -->
-  <meta name="description" content="Descubre las 7 maravillas de Mallorca: Castillo de Bellver, Sa Calobra, Sa Foradada, La Catedral, Coves del Drach, Santuario de Cura. Una guía turística interactiva." />
+  <meta name="author" content="7Maravillas" /> <!-- Meta Description -->
+  <meta name="description"
+    content="Descubre las 7 maravillas de Mallorca: Castillo de Bellver, Sa Calobra, Sa Foradada, La Catedral, Coves del Drach, Santuario de Cura. Una guía turística interactiva." />
   <!-- Meta Keyword -->
-  <meta name="keywords" content="mallorca, turismo mallorca, 7 maravillas, castillo bellver, sa calobra, sa foradada, catedral palma, coves drach, santuario cura, baleares, islas baleares" /><!-- meta character set -->
+  <meta name="keywords"
+    content="mallorca, turismo mallorca, 7 maravillas, castillo bellver, sa calobra, sa foradada, catedral palma, coves drach, santuario cura, baleares, islas baleares" />
+  <!-- meta character set -->
   <meta charset="UTF-8" />
   <!-- Site Title -->
   <title>7 Maravillas de Mallorca</title>
   <!-- PWA Support -->
   <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#007bff">  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#007bff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="7Mallorca">
   <link rel="apple-touch-icon" href="/mallorca.svg" type="image/svg+xml">
@@ -64,18 +68,19 @@
     }
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet" />  <!--
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet" /> <!--
 			CSS
 			============================================= -->
   <!-- Preload critical resources -->
   <link rel="preload" href="/css/bootstrap.css" as="style" />
   <link rel="preload" href="/css/main.css" as="style" />
   <link rel="preload" href="/fonts/fontawesome-webfont.woff2" as="font" type="font/woff2" crossorigin />
-			
+
   <link rel="stylesheet" href="/css/linearicons.css" />
   <link rel="stylesheet" href="/css/bootstrap.css" />
   <link rel="stylesheet" href="/css/magnific-popup.css" />
-  <!-- <link rel="stylesheet" href="css/animate.min.css" /> -->  <link rel="stylesheet" href="/css/owl.carousel.css" />
+  <!-- <link rel="stylesheet" href="css/animate.min.css" /> -->
+  <link rel="stylesheet" href="/css/owl.carousel.css" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/accessibility.css" />
   <style>
@@ -85,17 +90,17 @@
       height: 100vh;
       overflow: hidden;
     }
-    
+
     /* Ensure search bar doesn't shift layout */
     .search-bar-container {
       min-height: 80px;
     }
-    
+
     /* Prevent CLS for image loading */
     img {
       display: block;
     }
-    
+
     /* Make sure areas reserved for content don't collapse */
     .section-gap {
       min-height: 200px;
@@ -108,13 +113,14 @@
   <section class="banner-area" id="home">
     <!-- Start Header Area -->
     <header class="default-header">
-      <nav class="navbar navbar-expand-lg navbar-light">        <div class="container">          <a class="navbar-brand" href="index.html">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container"> <a class="navbar-brand" href="index.html">
             <svg height="40" width="40" role="img" aria-labelledby="logo-title">
               <title id="logo-title">Logo de 7 Maravillas de Mallorca</title>
               <image height="40" width="40" href="/mallorca.svg" />
             </svg>
             <h1 class="logo-text">7 Maravillas de Mallorca</h1>
-          </a>          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Desplegar menú de navegación">
             <span class="text-white lnr lnr-menu" aria-hidden="true"></span>
           </button>
@@ -133,20 +139,22 @@
   </section>
   <!-- Start slider wrapper -->
   <section class="slider-wrapper">
-    <!-- Search bar container with better positioning -->    <div class="search-bar-container">
+    <!-- Search bar container with better positioning -->
+    <div class="search-bar-container">
       <div class="search-bar center">
         <label for="maravillas-input" class="sr-only">Buscar maravillas</label>
-        <input type="text" id="maravillas-input" class="search-input" list="maravillas-list" placeholder="Buscar maravillas..." aria-label="Buscar maravillas" />
+        <input type="text" id="maravillas-input" class="search-input" list="maravillas-list"
+          placeholder="Buscar maravillas..." aria-label="Buscar maravillas" />
         <button class="search-button" aria-label="Buscar">
           <i class="fa fa-search" aria-hidden="true"></i>
         </button>
       </div>
-      
+
       <div id="search_buttons">
         <button class="genric-btn" id="random-button">Aleatorio</button>
         <button class="genric-btn" id="nearby-button">Cercano</button>
       </div>
-      
+
       <div id="suggestions" class="suggestions-container"></div>
     </div>
 
@@ -154,7 +162,9 @@
     <section class="default-banner active-blog-slider">
       <!-- Castillo de Bellver -->
       <div class="item-slider relative">
-        <img src="/castilloBellver/bellver1.webp" width="1920" height="1080" alt="Castillo de Bellver" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" fetchpriority="high" />
+        <img src="/castilloBellver/bellver1.webp" width="1920" height="1080" alt="Castillo de Bellver"
+          style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy"
+          fetchpriority="high" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.5)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -170,7 +180,8 @@
         </div>
       </div>
       <div class="item-slider relative">
-        <img src="/saCalobra/calobra1.webp" width="1920" height="1080" alt="Sa Calobra" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
+        <img src="/saCalobra/calobra1.webp" width="1920" height="1080" alt="Sa Calobra"
+          style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -184,8 +195,10 @@
             </div>
           </div>
         </div>
-      </div>      <div class="item-slider relative">
-        <img src="/saForadada/foradada1.webp" width="1920" height="1080" alt="Sa Foradada" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
+      </div>
+      <div class="item-slider relative">
+        <img src="/saForadada/foradada1.webp" width="1920" height="1080" alt="Sa Foradada"
+          style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -201,7 +214,8 @@
         </div>
       </div>
       <div class="item-slider relative">
-        <img src="/catedralPalma/catedral1.webp" width="1920" height="1080" alt="La Catedral" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
+        <img src="/catedralPalma/catedral1.webp" width="1920" height="1080" alt="La Catedral"
+          style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -215,8 +229,10 @@
             </div>
           </div>
         </div>
-      </div>      <div class="item-slider relative">
-        <img src="/covesDrach/drach1.webp" width="1920" height="1080" alt="Coves del Drach" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
+      </div>
+      <div class="item-slider relative">
+        <img src="/covesDrach/drach1.webp" width="1920" height="1080" alt="Coves del Drach"
+          style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -232,7 +248,8 @@
         </div>
       </div>
       <div class="item-slider relative">
-        <img src="/santuarioCura/cura1.webp" width="1920" height="1080" alt="Santuario de Cura" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
+        <img src="/santuarioCura/cura1.webp" width="1920" height="1080" alt="Santuario de Cura"
+          style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
         <div class="overlay" style="background: rgba(0, 0, 0, 0.3)"></div>
         <div class="container">
           <div class="row fullscreen justify-content-center align-items-center">
@@ -250,7 +267,7 @@
     </section>
   </section>
 
-  
+
 
   <!-- JavaScript para funcionalidad del buscador -->
   <script>
@@ -269,7 +286,7 @@
 
       try {
         const maravillas = await getMaravillas();
-        
+
         searchInput.addEventListener('input', function (e) {
           const value = e.target.value.toLowerCase();
           suggestionsContainer.innerHTML = '';
@@ -316,7 +333,7 @@
   </div>
   <section class="project-area section-gap" id="seccion-maravilla" style="visibility: hidden; display: none;">
   </section>
-
+  </div>
   <script>
 
     const searchInput = document.querySelector('.search-input');
@@ -335,7 +352,7 @@
         // Usamos la función reutilizable createMaravillaContainer
         const container = await createMaravillaContainer(maravilla);
         seccionMaravilla.appendChild(container);
-        
+
         // Add video for the selected maravilla
         crearVideoMaravilla(maravilla);
 
@@ -377,7 +394,7 @@
       console.log(location);
 
       const maravillas = await getMaravillas();
-      
+
       // Calculamos la distancia euclídea entre la maravilla seleccionada y mi ubicación
       let minDistancia = Infinity;
       let maravillaMasCercana = null;
@@ -392,8 +409,8 @@
           maravillaMasCercana = maravilla;
         }
 
-        
-        
+
+
       });
 
       const seccionMaravilla = document.getElementById('seccion-maravilla');
@@ -440,7 +457,7 @@
       </div>
     </div>
   </section>
- <!--  <style>/* Contenedor del carrusel */
+  <!--  <style>/* Contenedor del carrusel */
     #contenedorFotosCarrousel .item.single-gallery {
       width: 100%;
       height: 300px; /* Ajusta el alto según lo que necesites */
@@ -531,11 +548,11 @@
 
   <!-- Start Video Area -->
 
-  <section class="video-area pt-40 pb-40" >
+  <section class="video-area hidden pt-40 pb-40">
     <div class="overlay overlay-bg"></div>
     <div class="container">
       <div class="video-content">
-        <a href="https://www.youtube.com/watch?v=s_vnbWgnSSs" class="play-btn" aria-label="Ver video sobre Mallorca">
+         <a href="https://www.youtube.com/watch?v=s_vnbWgnSSs" class="play-btn" aria-label="Ver video sobre Mallorca">
           <img src="img/play-btn.webp" alt="Botón de reproducción" width="72" height="72" loading="lazy" />
         </a>
         <div class="video-desc">
@@ -545,6 +562,7 @@
           <h3 class="text-white">Haz click para descubrir Mallorca</h3>
         </div>
       </div>
+    </div>
     </div>
 
     <script>
@@ -560,7 +578,6 @@
           // Set background image once the image is loaded
           videoArea.style.backgroundImage = `url(${tempImage.src})`;
         };
-
         // Set video link or fallback
         const videoLink = maravilla.linkVideo || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Default video link
 
@@ -571,9 +588,11 @@
         }
 
         // Set video description
-        videoArea.querySelector('.video-desc h3').textContent = maravilla.name;
-        videoArea.querySelector('.video-desc h4').textContent = `Haz click para descubrir ${maravilla.name}`;
+        videoArea.querySelector('.video-desc h2').textContent = maravilla.name;
+        videoArea.querySelector('.video-desc h3').textContent = `Haz click para descubrir ${maravilla.name}`;
+        videoArea.classList.remove('hidden'); 
       }
+
     </script>
   </section>
 
@@ -585,43 +604,58 @@
         <div class="menu-content pb-40 col-lg-8">
           <div class="title text-center">
             <h1 class="mb-10">Sobre nosotros</h1>
-            <!-- <p>Who are in extremely love with eco friendly system.</p> -->
           </div>
+          <!-- <p>Who are in extremely love with eco friendly system.</p> -->
+        
+      </div>
+    </div>
+    <div class="single-info row mt-40">
+      <div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left">
+        <div class="info-thumb">
+          <img src="/us.webp" class="img-fluid" alt="Foto del equipo de 7 Maravillas de Mallorca" width="600"
+            height="400" loading="lazy" />
         </div>
       </div>
-      <div class="single-info row mt-40">        <div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left">
-          <div class="info-thumb">
-            <img src="/us.webp" class="img-fluid" alt="Foto del equipo de 7 Maravillas de Mallorca" width="600" height="400" loading="lazy" />
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-12 no-padding info-rigth">          <div class="info-content">
-            <h3 class="pb-30">
-              Por qué las <br />
-              7 maravillas de <br />
-              Mallorca?
-            </h3>
-            <p>
-              Decidimos centrarnos en las 7 maravillas de Mallorca porque creemos que la isla tiene una riqueza natural y cultural que merece ser compartida con el mundo. Al destacar estos lugares emblemáticos, 
-              buscamos no solo atraer a los turistas, sino también educar a los residentes y visitantes sobre la historia, la arquitectura y el patrimonio que hacen de Mallorca un destino único.
-            </p>
-            <br />
-            <p>
-              Mallorca es un destino turístico reconocido a nivel mundial, y al enfocarnos en sus maravillas, 
-              queremos ofrecer a los visitantes una guía visual y educativa sobre los lugares más emblemáticos de la isla. 
-            </p>
-            <br />
-            <p>
-              Esta página web servirá como una ventana interactiva para que los usuarios exploren y descubran la belleza oculta de la isla,
-              brindándoles una experiencia inmersiva que permite explorar distintos lugares turísticos.  
-            </p>
-            <br />
-            <p>
-              Plantilla: <a href="https://themewagon.github.io/adventure/"> ThemeWagon: adventure</a>  
-            </p>
-          </div>
+      <div class="col-lg-6 col-md-12 no-padding info-rigth">
+        <div class="info-content">
+          <h3 class="pb-30">
+            Por qué las <br />
+            7 maravillas de <br />
+            Mallorca?
+          </h3>
+          <p>
+            Decidimos centrarnos en las 7 maravillas de Mallorca porque creemos que la isla tiene una riqueza natural y
+            cultural que merece ser compartida con el mundo. Al destacar estos lugares emblemáticos,
+            buscamos no solo atraer a los turistas, sino también educar a los residentes y visitantes sobre la historia,
+            la arquitectura y el patrimonio que hacen de Mallorca un destino único.
+          </p>
+          <br />
+          <p>
+            Mallorca es un destino turístico reconocido a nivel mundial, y al enfocarnos en sus maravillas,
+            queremos ofrecer a los visitantes una guía visual y educativa sobre los lugares más emblemáticos de la isla.
+          </p>
+          <br />
+          <p>
+            Esta página web servirá como una ventana interactiva para que los usuarios exploren y descubran la belleza
+            oculta de la isla,
+            brindándoles una experiencia inmersiva que permite explorar distintos lugares turísticos.
+          </p>
+          <br />
+          <p>
+            Plantilla: <a href="https://themewagon.github.io/adventure/"> ThemeWagon: adventure</a>
+          </p>
         </div>
       </div>
     </div>
+    </div>
+  </section>
+
+  <section class="video-area-uib section-gap">
+    <div class="video-content-uib">
+      <video class="video-player-uib" width="90%" height="auto" controls poster="UIB/uib13.webp" loading="lazy">
+        <source src="/UIB/video_uib.mp4" type="video/mp4" />
+        Tu navegador no soporta la etiqueta <code>video</code>.
+      </video>
   </section>
   <!-- End about Area -->
   <!-- Start logo Area -->
@@ -637,71 +671,74 @@
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="menu-content pb-60 col-lg-8">
-           <div class="title text-center" style="color: black;">
-                <h1 class="mb-10">Contáctanos</h1>
-                <p>¡Déjanos un mensaje para cualquier duda o sugerencia!</p>
-                </div>
+          <div class="title text-center" style="color: black;">
+            <h1 class="mb-10">Contáctanos</h1>
+            <p>¡Déjanos un mensaje para cualquier duda o sugerencia!</p>
+          </div>
         </div>
       </div>
       <!-- Reemplaza el formulario de contacto por el siguiente código -->
-<form class="form-area" id="myForm" action="php/contacto.php" method="post" class="contact-form text-right">
-  <div class="row">
-    <div class="col-lg-6 form-group">
-      <label for="nombre" class="sr-only">Nombre</label>
-      <input id="nombre" name="nombre" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'"
-        class="common-input mb-20 form-control" required type="text" aria-required="true" />
+      <form class="form-area" id="myForm" action="php/contacto.php" method="post" class="contact-form text-right">
+        <div class="row">
+          <div class="col-lg-6 form-group">
+            <label for="nombre" class="sr-only">Nombre</label>
+            <input id="nombre" name="nombre" placeholder="Nombre" onfocus="this.placeholder = ''"
+              onblur="this.placeholder = 'Nombre'" class="common-input mb-20 form-control" required type="text"
+              aria-required="true" />
 
-      <label for="email" class="sr-only">Correo electrónico</label>
-      <input id="email" name="email" placeholder="Correo electrónico"
-        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''"
-        onblur="this.placeholder = 'Correo electrónico'" class="common-input mb-20 form-control" required type="email" aria-required="true" />
+            <label for="email" class="sr-only">Correo electrónico</label>
+            <input id="email" name="email" placeholder="Correo electrónico"
+              pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''"
+              onblur="this.placeholder = 'Correo electrónico'" class="common-input mb-20 form-control" required
+              type="email" aria-required="true" />
 
-      <!-- Campo subject eliminado ya que no se utiliza en contacto.php -->
-    </div>
-    <div class="col-lg-6 form-group">
-      <label for="mensaje" class="sr-only">Mensaje</label>
-      <textarea id="mensaje" class="common-textarea mt-10 form-control" name="mensaje" placeholder="Mensaje"
-        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensaje'" required aria-required="true"></textarea>
-      <button class="primary-btn mt-20" type="submit">
-        Enviar mensaje<span class="lnr lnr-arrow-right" aria-hidden="true"></span>
-      </button>
-      <div class="alert-msg" role="alert"></div>
-    </div>
-  </div>
-</form>
+            <!-- Campo subject eliminado ya que no se utiliza en contacto.php -->
+          </div>
+          <div class="col-lg-6 form-group">
+            <label for="mensaje" class="sr-only">Mensaje</label>
+            <textarea id="mensaje" class="common-textarea mt-10 form-control" name="mensaje" placeholder="Mensaje"
+              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensaje'" required
+              aria-required="true"></textarea>
+            <button class="primary-btn mt-20" type="submit">
+              Enviar mensaje<span class="lnr lnr-arrow-right" aria-hidden="true"></span>
+            </button>
+            <div class="alert-msg" role="alert"></div>
+          </div>
+        </div>
+      </form>
 
-<script>
-  // Intercepta el envío del formulario para enviar los datos vía fetch en formato JSON
-  document.getElementById("myForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = {
-          nombre: form.nombre.value,
-          email: form.email.value,
-          mensaje: form.mensaje.value
-      };
+      <script>
+        // Intercepta el envío del formulario para enviar los datos vía fetch en formato JSON
+        document.getElementById("myForm").addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const form = e.target;
+          const data = {
+            nombre: form.nombre.value,
+            email: form.email.value,
+            mensaje: form.mensaje.value
+          };
 
-      try {
-          const response = await fetch("/php/contacto.php", {
+          try {
+            const response = await fetch("/php/contacto.php", {
               method: "POST",
               headers: {
-                  "Content-Type": "application/json"
+                "Content-Type": "application/json"
               },
               body: JSON.stringify(data)
-          });
-          const result = await response.json();
-          if (response.ok) {
+            });
+            const result = await response.json();
+            if (response.ok) {
               alert("Mensaje enviado con éxito");
               form.reset();
-          } else {
+            } else {
               alert("Error: " + (result.error || "Error al enviar el mensaje"));
+            }
+          } catch (error) {
+            console.error(error);
+            alert("Error al enviar el mensaje");
           }
-      } catch (error) {
-          console.error(error);
-          alert("Error al enviar el mensaje");
-      }
-  });
-</script>
+        });
+      </script>
     </div>
   </section>
   <!-- end contact Area -->
@@ -713,6 +750,7 @@
         <div class="col-lg-5 col-md-6 col-sm-6">
           <div class="single-footer-widget" style="color: white;">
             <h6>About Us</h6>
+
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore dolore magna aliqua.
@@ -738,9 +776,10 @@
               <form id="newsletterForm" action="php/newsletter.php" method="post" class="form-inline">
                 <div class="d-flex flex-row">
                   <label for="newsletter-email" class="sr-only">Correo electrónico</label>
-                  <input id="newsletter-email" class="form-control" name="email" placeholder="Tu email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Tu email'" required type="email" aria-required="true" />
-                  
+                  <input id="newsletter-email" class="form-control" name="email" placeholder="Tu email"
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu email'" required type="email"
+                    aria-required="true" />
+
                   <button type="submit" class="click-btn btn btn-default" aria-label="Suscribirse">
                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                   </button>
@@ -749,35 +788,35 @@
               </form>
 
               <script>
-              document.getElementById("newsletterForm").addEventListener("submit", async function(e) {
-                e.preventDefault();
-                const form = e.target;
-                const email = form.email.value;
-                const infoDiv = form.querySelector('.info');
-                
-                try {
-                  const response = await fetch("/php/newsletter.php", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ email })
-                  });
-                  
-                  const result = await response.json();
-                  if (response.ok) {
-                    infoDiv.innerHTML = '<div class="alert alert-success">¡Gracias por suscribirte!</div>';
-                    alert("¡Gracias por suscribirte!");
-                    form.reset();
-                  } else {
-                    alert("Error: " + (result.error || "No se pudo completar la suscripción"));
-                    infoDiv.innerHTML = '<div class="alert alert-danger">Error: ' + (result.error || "No se pudo completar la suscripción") + '</div>';
+                document.getElementById("newsletterForm").addEventListener("submit", async function (e) {
+                  e.preventDefault();
+                  const form = e.target;
+                  const email = form.email.value;
+                  const infoDiv = form.querySelector('.info');
+
+                  try {
+                    const response = await fetch("/php/newsletter.php", {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json"
+                      },
+                      body: JSON.stringify({ email })
+                    });
+
+                    const result = await response.json();
+                    if (response.ok) {
+                      infoDiv.innerHTML = '<div class="alert alert-success">¡Gracias por suscribirte!</div>';
+                      alert("¡Gracias por suscribirte!");
+                      form.reset();
+                    } else {
+                      alert("Error: " + (result.error || "No se pudo completar la suscripción"));
+                      infoDiv.innerHTML = '<div class="alert alert-danger">Error: ' + (result.error || "No se pudo completar la suscripción") + '</div>';
+                    }
+                  } catch (error) {
+                    console.error(error);
+                    infoDiv.innerHTML = '<div class="alert alert-danger">Error al procesar la solicitud</div>';
                   }
-                } catch (error) {
-                  console.error(error);
-                  infoDiv.innerHTML = '<div class="alert alert-danger">Error al procesar la solicitud</div>';
-                }
-              });
+                });
               </script>
             </div>
           </div>
@@ -785,7 +824,8 @@
         <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
           <div class="single-footer-widget">
             <h6>Follow Us</h6>
-            <p>Let us be social</p>            <div class="footer-social d-flex align-items-center">
+            <p>Let us be social</p>
+            <div class="footer-social d-flex align-items-center">
               <a href="#" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
               <a href="#" aria-label="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
               <a href="#" aria-label="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
@@ -796,7 +836,8 @@
       </div>
     </div>
   </footer>
-  <!-- End footer Area -->  <script src="js/preload.js" defer></script>
+  <!-- End footer Area -->
+  <script src="js/preload.js" defer></script>
   <script src="js/lazy-load.js" defer></script>
   <script src="js/vendor/jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
@@ -814,12 +855,12 @@
   <script>
     // Registrar Service Worker
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
+      window.addEventListener('load', function () {
         navigator.serviceWorker.register('/sw.js')
-          .then(function(registration) {
+          .then(function (registration) {
             console.log('Service Worker registrado con éxito:', registration.scope);
           })
-          .catch(function(error) {
+          .catch(function (error) {
             console.log('Error al registrar Service Worker:', error);
           });
       });

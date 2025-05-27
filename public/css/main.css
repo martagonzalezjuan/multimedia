@@ -2678,21 +2678,57 @@ h6 {
   line-height: 24px;
 }
 
-.video-area {
+ .video-area {
   padding: 200px 0 60px 0;
   position: relative;
-  background: url(/saForadada/foradada1.webp) no-repeat center center/cover;
-}
+  background: url() no-repeat center center/cover;
+} 
+
+
 
 .video-area .overlay-bg {
   opacity: 0.6;
 }
 
-.video-area .video-content {
+
+.video-area-uib {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+.video-area-uib .video-content-uib {
+  width: 90%;
+  max-width: 90vw;  
   text-align: center;
   position: relative;
   z-index: 2;
+  height: 80%;
 }
+.video-player-uib {
+  width: 90%;
+  height: 50%;
+  border-radius: 12px;
+}
+
+.video-area .video-content {
+  width: 90%;
+  max-width: 90vw;  
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  height: 80%;
+}
+.video-player {
+  width: 90%;
+  height: 50%;
+  border-radius: 12px;
+}
+
+/* en tu CSS principal */
+.hidden {
+  display: none !important;
+}
+
 
 .video-area .video-content a {
   display: inline-block;
